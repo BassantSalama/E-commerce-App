@@ -35,4 +35,3 @@ struct APIRequest {
         self.parameterEncoding = parameterEncoding
     }
 }
-

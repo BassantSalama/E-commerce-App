@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public enum APIError: Error, LocalizedError {
     case invalidURL
     case networkError(Error)

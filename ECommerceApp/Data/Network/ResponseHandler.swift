@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct ResponseHandler {
     
     static func handle<T>(
