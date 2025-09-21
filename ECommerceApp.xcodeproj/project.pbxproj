@@ -116,6 +116,7 @@
 		0495649F2E7FD53B00BD9352 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				049564CA2E801E0800BD9352 /* Modules */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -147,6 +148,13 @@
 				049564C82E8006E200BD9352 /* AppColors.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		049564CA2E801E0800BD9352 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
