@@ -1,0 +1,51 @@
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# CocoaPods (if used)
+Pods/
+
+# Carthage (if used)
+Carthage/Build/
+
+# Firebase (Secrets)
+GoogleService-Info.plist
+
+# User settings
+*.swp
+*.lock
+*.DS_Store
+.idea/
+.vscode/
+.env
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Symbolic links
+*.orig
+
+# Fastlane (if used)
+fastlane/report.xml
+fastlane/screenshots
+fastlane/test_output
+
+# Other backup files
+*~
+*.bak
+*.backup?
