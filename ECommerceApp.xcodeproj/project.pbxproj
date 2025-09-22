@@ -15,6 +15,8 @@
 		044D83D12E8155AB0073CBC9 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044D83D02E8155AB0073CBC9 /* SignUp.storyboard */; };
 		044D83D32E8155C60073CBC9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83D22E8155C60073CBC9 /* SignUpViewController.swift */; };
 		044D83D52E815FC10073CBC9 /* ConfirmPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83D42E815FC10073CBC9 /* ConfirmPasswordTextField.swift */; };
+		044D83D92E8170670073CBC9 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044D83D82E8170670073CBC9 /* ForgotPassword.storyboard */; };
+		044D83DB2E8170870073CBC9 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83DA2E8170870073CBC9 /* ForgotPasswordViewController.swift */; };
 		049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564872E7FCA6F00BD9352 /* AppDelegate.swift */; };
 		0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564892E7FCA6F00BD9352 /* SceneDelegate.swift */; };
 		049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049564902E7FCA7100BD9352 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		044D83D02E8155AB0073CBC9 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		044D83D22E8155C60073CBC9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		044D83D42E815FC10073CBC9 /* ConfirmPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordTextField.swift; sourceTree = "<group>"; };
+		044D83D82E8170670073CBC9 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
+		044D83DA2E8170870073CBC9 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		049564842E7FCA6F00BD9352 /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049564872E7FCA6F00BD9352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049564892E7FCA6F00BD9352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,31 @@
 			sourceTree = "<group>";
 		};
 		044D83CF2E81556A0073CBC9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		044D83D62E8170290073CBC9 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				044D83DC2E81709B0073CBC9 /* ViewModel */,
+				044D83D72E81704C0073CBC9 /* Views */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		044D83D72E81704C0073CBC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				044D83D82E8170670073CBC9 /* ForgotPassword.storyboard */,
+				044D83DA2E8170870073CBC9 /* ForgotPasswordViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		044D83DC2E81709B0073CBC9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -225,6 +254,7 @@
 		049564CA2E801E0800BD9352 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				044D83D62E8170290073CBC9 /* ForgotPassword */,
 				044D83CD2E8155570073CBC9 /* SignUp */,
 				049564CB2E801F3F00BD9352 /* Login */,
 			);
@@ -316,6 +346,7 @@
 			files = (
 				049564942E7FCA7100BD9352 /* LaunchScreen.storyboard in Resources */,
 				049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */,
+				044D83D92E8170670073CBC9 /* ForgotPassword.storyboard in Resources */,
 				044D83D12E8155AB0073CBC9 /* SignUp.storyboard in Resources */,
 				049564CF2E801F9700BD9352 /* Login.storyboard in Resources */,
 			);
@@ -342,6 +373,7 @@
 				044D83D32E8155C60073CBC9 /* SignUpViewController.swift in Sources */,
 				049564C02E7FFF0F00BD9352 /* APIRequestBuilder.swift in Sources */,
 				044D83CA2E813E290073CBC9 /* BaseButton.swift in Sources */,
+				044D83DB2E8170870073CBC9 /* ForgotPasswordViewController.swift in Sources */,
 				049564BA2E7FFEC100BD9352 /* APIError.swift in Sources */,
 				044D83C32E812C050073CBC9 /* LoginViewController.swift in Sources */,
 				049564C22E7FFF2D00BD9352 /* ResponseHandler.swift in Sources */,

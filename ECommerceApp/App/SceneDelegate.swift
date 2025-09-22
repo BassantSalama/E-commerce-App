@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
+        let storyboard = UIStoryboard(name: "ForgotPassword", bundle: nil)
         let loginVC = storyboard.instantiateInitialViewController()
         
         window?.rootViewController = UINavigationController(rootViewController: loginVC!)
