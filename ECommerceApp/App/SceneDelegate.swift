@@ -11,32 +11,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-        func scene(_ scene: UIScene,
-                   willConnectTo session: UISceneSession,
-                   options connectionOptions: UIScene.ConnectionOptions) {
-            
-            guard let windowScene = (scene as? UIWindowScene) else { return }
-            
-            // إنشاء Window جديدة
-            window = UIWindow(windowScene: windowScene)
-            
-            // تحميل الـ Storyboard
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            
-            // 👇 عندك خيارين هنا:
-            
-            // 1) لو Login هو Initial VC في storyboard
-            let loginVC = storyboard.instantiateInitialViewController()
-            
-            // 2) لو مدياله Storyboard ID
-            // let loginVC = storyboard.instantiateViewController(identifier: "LoginViewController")
-            
-            // نحط Login كـ Root داخل Navigation
-            window?.rootViewController = UINavigationController(rootViewController: loginVC!)
-            
-            // نظهر الشاشة
-            window?.makeKeyAndVisible()
-        }
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(windowScene: windowScene)
+        
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginVC = storyboard.instantiateInitialViewController()
+        
+        window?.rootViewController = UINavigationController(rootViewController: loginVC!)
+        window?.makeKeyAndVisible()
+    }
+
     
     
     func sceneDidDisconnect(_ scene: UIScene) {

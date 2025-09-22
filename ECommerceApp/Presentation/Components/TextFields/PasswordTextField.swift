@@ -30,7 +30,7 @@ class PasswordTextField: BaseTextField {
     
     private func setupPassword() {
         self.isSecureTextEntry = true
-       // self.placeholder = "Password"
+        self.placeholder = "Password"
         
         // Add target
         eyeButton.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
