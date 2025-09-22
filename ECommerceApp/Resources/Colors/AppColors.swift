@@ -9,6 +9,6 @@
 import UIKit
 
 struct AppColors {
-    static let primary = UIColor(named: "AppPrimary")!
-    static let border = UIColor(named: "BorderActive")!
+    static let primary   = UIColor(named: "PrimaryColor")!
+    static let secondary = UIColor(named: "SecondaryColor")!
 }
