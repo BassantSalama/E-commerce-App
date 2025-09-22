@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     
     
-    @IBOutlet weak var emailTextField: BaseTextField!
+    @IBOutlet weak var emailTextField: EmailTextField!
     
     
     @IBOutlet weak var passwordLabel: UILabel!
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: PasswordTextField!
     
     
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var signInButton: BaseButton!
     
     
     @IBOutlet weak var forgetPasswordLabel: UILabel!

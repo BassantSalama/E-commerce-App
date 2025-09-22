@@ -11,6 +11,7 @@
 		044D83C12E8124030073CBC9 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83C02E8124030073CBC9 /* PasswordTextField.swift */; };
 		044D83C32E812C050073CBC9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83C22E812C050073CBC9 /* LoginViewController.swift */; };
 		044D83CA2E813E290073CBC9 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83C92E813E290073CBC9 /* BaseButton.swift */; };
+		044D83CC2E8153100073CBC9 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83CB2E8153100073CBC9 /* EmailTextField.swift */; };
 		049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564872E7FCA6F00BD9352 /* AppDelegate.swift */; };
 		0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564892E7FCA6F00BD9352 /* SceneDelegate.swift */; };
 		049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049564902E7FCA7100BD9352 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		044D83C02E8124030073CBC9 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		044D83C22E812C050073CBC9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		044D83C92E813E290073CBC9 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		044D83CB2E8153100073CBC9 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		049564842E7FCA6F00BD9352 /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049564872E7FCA6F00BD9352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049564892E7FCA6F00BD9352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				044D83BE2E8121BF0073CBC9 /* BaseTextField.swift */,
 				044D83C02E8124030073CBC9 /* PasswordTextField.swift */,
+				044D83CB2E8153100073CBC9 /* EmailTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			files = (
 				049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */,
 				049564C62E8000A200BD9352 /* UIImageView.swift in Sources */,
+				044D83CC2E8153100073CBC9 /* EmailTextField.swift in Sources */,
 				044D83C12E8124030073CBC9 /* PasswordTextField.swift in Sources */,
 				0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */,
 				049564C92E8006E200BD9352 /* AppColors.swift in Sources */,
