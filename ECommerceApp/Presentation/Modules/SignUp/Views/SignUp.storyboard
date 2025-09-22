@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="SignUpViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignUp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7h-Bp-Qzv">
+                                <rect key="frame" x="144" y="99" width="105.33333333333331" height="39.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOq-KL-IRB" userLabel="Super Stack View">
+                                <rect key="frame" x="30" y="178.66666666666663" width="333" height="281"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="svX-Ox-hyd" userLabel="Email Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="85.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thl-gw-4SL">
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7U-Oy-nhV" customClass="EmailTextField" customModule="ECommerceApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="37.333333333333343" width="333" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="4WD-YZ-lDX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="U7U-Oy-nhV" firstAttribute="width" secondItem="svX-Ox-hyd" secondAttribute="width" id="Ihh-jN-O7q"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="l44-oo-dU2" userLabel="Password Stack View">
+                                        <rect key="frame" x="0.0" y="102.33333333333334" width="333" height="85.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P32-Sh-3Xb">
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BAS-pF-OMw" customClass="PasswordTextField" customModule="ECommerceApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="37.333333333333314" width="333" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="BAS-pF-OMw" firstAttribute="width" secondItem="l44-oo-dU2" secondAttribute="width" id="IO3-hF-qEB"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-dF-dox" userLabel="Confirm Password Stack View">
+                                        <rect key="frame" x="0.0" y="204.66666666666666" width="333" height="76.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5S-1S-8Pd">
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CgN-pE-gpK" customClass="ConfirmPasswordTextField" customModule="ECommerceApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28.333333333333371" width="333" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="ANH-af-K9u"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="CgN-pE-gpK" firstAttribute="width" secondItem="VVo-dF-dox" secondAttribute="width" id="6fx-qx-HfC"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VVo-dF-dox" firstAttribute="width" secondItem="SOq-KL-IRB" secondAttribute="width" id="FlQ-sL-usX"/>
+                                    <constraint firstItem="l44-oo-dU2" firstAttribute="width" secondItem="SOq-KL-IRB" secondAttribute="width" id="PAm-ql-Rod"/>
+                                    <constraint firstItem="BAS-pF-OMw" firstAttribute="height" secondItem="U7U-Oy-nhV" secondAttribute="height" id="bCu-3Q-KU4"/>
+                                    <constraint firstItem="svX-Ox-hyd" firstAttribute="width" secondItem="SOq-KL-IRB" secondAttribute="width" id="wiO-OS-MGj"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="CTF-G1-bff">
+                                <rect key="frame" x="116.33333333333333" y="499.66666666666669" width="160.66666666666669" height="77.666666666666686"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbU-Jh-DJ7" customClass="BaseButton" customModule="ECommerceApp" customModuleProvider="target">
+                                        <rect key="frame" x="40.333333333333321" y="0.0" width="79.666666666666686" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="SignUp"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="SignUp"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have Account? LogIn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73b-ts-1Dc">
+                                        <rect key="frame" x="0.0" y="57.333333333333321" width="160.66666666666666" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SOq-KL-IRB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="8Kz-RI-uIx"/>
+                            <constraint firstItem="CTF-G1-bff" firstAttribute="top" secondItem="SOq-KL-IRB" secondAttribute="bottom" constant="40" id="JVu-9W-2HE"/>
+                            <constraint firstItem="CTF-G1-bff" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="hqf-yB-bTj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SOq-KL-IRB" secondAttribute="trailing" constant="30" id="myl-1s-uO1"/>
+                            <constraint firstItem="SOq-KL-IRB" firstAttribute="top" secondItem="Q7h-Bp-Qzv" secondAttribute="bottom" constant="40" id="pca-rc-dtE"/>
+                            <constraint firstItem="Q7h-Bp-Qzv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="tiI-pN-WrU"/>
+                            <constraint firstItem="Q7h-Bp-Qzv" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="xtH-Bc-feA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmPasswordLabel" destination="n5S-1S-8Pd" id="dxE-P4-7Ah"/>
+                        <outlet property="confirmPasswordTextField" destination="CgN-pE-gpK" id="JKa-sn-leg"/>
+                        <outlet property="emailLabel" destination="thl-gw-4SL" id="awc-Lp-fHZ"/>
+                        <outlet property="emailTextField" destination="U7U-Oy-nhV" id="1td-Bx-TBB"/>
+                        <outlet property="haveAccountLabel" destination="73b-ts-1Dc" id="4zT-Ik-YpM"/>
+                        <outlet property="passwordLabel" destination="P32-Sh-3Xb" id="rjy-80-Xz8"/>
+                        <outlet property="passwordTextField" destination="BAS-pF-OMw" id="pBC-5U-Byy"/>
+                        <outlet property="signUpButton" destination="HbU-Jh-DJ7" id="89h-dM-fWM"/>
+                        <outlet property="signUpLabel" destination="Q7h-Bp-Qzv" id="5Uq-Bw-Nhp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="-2"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="BAS-pF-OMw">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+        <designable name="HbU-Jh-DJ7">
+            <size key="intrinsicContentSize" width="79.666666666666671" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
