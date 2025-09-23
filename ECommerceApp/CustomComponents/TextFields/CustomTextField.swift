@@ -5,13 +5,9 @@
 //  Created by mac on 22/09/2025.
 //
 
-
-
 import UIKit
 
-
-
-// MARK: - BaseTextField
+// MARK: - CustomTextField
 class CustomTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)

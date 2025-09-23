@@ -7,9 +7,8 @@
 
 import UIKit
 
-
 class EmailTextField: CustomTextField {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupEmail()

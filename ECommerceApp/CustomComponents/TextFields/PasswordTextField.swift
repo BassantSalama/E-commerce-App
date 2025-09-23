@@ -43,7 +43,7 @@ class PasswordTextField: CustomTextField {
         self.rightView = container
         self.rightViewMode = .always
     }
-
+    
     @objc private func togglePasswordVisibility() {
         self.isSecureTextEntry.toggle()
         
