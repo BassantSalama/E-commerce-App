@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - Password TextField
-class PasswordTextField: BaseTextField {
+class PasswordTextField: CustomTextField {
     
     private let eyeButton: UIButton = {
         let button = UIButton(type: .custom)

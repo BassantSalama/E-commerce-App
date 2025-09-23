@@ -9,10 +9,10 @@
 
 import UIKit
 
-@IBDesignable
+
 
 // MARK: - BaseTextField
-class BaseTextField: UITextField {
+class CustomTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupBaseStyle()

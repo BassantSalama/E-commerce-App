@@ -7,8 +7,8 @@
 
 import UIKit
 
-@IBDesignable
-class EmailTextField: BaseTextField {
+
+class EmailTextField: CustomTextField {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
