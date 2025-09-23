@@ -5,9 +5,10 @@
 //  Created by mac on 23/09/2025.
 //
 
-import Foundation
+
+import UIKit
 
 protocol Coordinator: AnyObject {
-    var childCoordinators: [Coordinator] { get set }
+    var navigationController: UINavigationController { get set }
     func start()
 }
