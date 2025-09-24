@@ -19,9 +19,8 @@ final class AppFlowCoordinator: Coordinator {
         self.diContainer = diContainer
     }
     
-    
     func start() {
-        navigationController.viewControllers = []
+        startFlowCoordinator(LoginCoordinator.self)
     }
     
     func addChildCoordinator(_ coordinator: Coordinator) {
@@ -33,14 +32,23 @@ final class AppFlowCoordinator: Coordinator {
     }
     
     func startFlowCoordinator(_ coordinatorType: Coordinator.Type) {
-        
         let coordinator: Coordinator
-        coordinator = LoginCoordinator(navigationController: navigationController, diContainer: diContainer)
+        
+        switch coordinatorType {
+        case is LoginCoordinator.Type:
+            let loginDIContainer = diContainer.makeLoginDIContainer()
+            coordinator = LoginCoordinator(
+                navigationController: navigationController,
+                diContainer: loginDIContainer
+            )
+            
+        default:
+            print(" Unsupported coordinator type: \(coordinatorType)")
+            return
+        }
         
         addChildCoordinator(coordinator)
         coordinator.start()
     }
-    
-    
 }
 

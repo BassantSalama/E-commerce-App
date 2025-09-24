@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="HEK-6r-NBN">
             <objects>
-                <viewController id="U97-wV-iQ8" customClass="LoginViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="U97-wV-iQ8" customClass="LoginViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eoW-fh-dt2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCh-qV-nHu">
-                                                <rect key="frame" x="100" y="40" width="193" height="38.333333333333343"/>
+                                                <rect key="frame" x="158.33333333333334" y="40" width="76.666666666666657" height="38.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -81,10 +81,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="I17-Cq-dnf" userLabel="Bottom Stack View">
-                                                <rect key="frame" x="40" y="341" width="313" height="146.66666666666663"/>
+                                                <rect key="frame" x="76.666666666666671" y="341" width="239.66666666666663" height="146.66666666666663"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5T-Sp-Hvb" customClass="CustomButton" customModule="ECommerceApp" customModuleProvider="target">
-                                                        <rect key="frame" x="101.66666666666666" y="0.0" width="110" height="40"/>
+                                                        <rect key="frame" x="64.999999999999986" y="0.0" width="110.00000000000001" height="40"/>
                                                         <color key="backgroundColor" name="PrimaryColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="GXC-Ic-xVt"/>
@@ -100,13 +100,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68W-uy-2S0">
-                                                        <rect key="frame" x="76.666666666666686" y="59" width="160" height="34.333333333333343"/>
+                                                        <rect key="frame" x="40" y="59" width="160" height="34.333333333333343"/>
                                                         <color key="tintColor" name="PrimaryColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKm-Zi-rQk">
-                                                        <rect key="frame" x="36.666666666666671" y="112.33333333333336" width="239.66666666666663" height="34.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="112.33333333333336" width="239.66666666666666" height="34.333333333333329"/>
                                                         <color key="tintColor" name="PrimaryColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Don't have account? SignUp"/>
@@ -116,15 +116,15 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="I17-Cq-dnf" firstAttribute="centerX" secondItem="N4S-px-Q0T" secondAttribute="centerX" id="CTG-lJ-Kui"/>
                                             <constraint firstItem="xty-Su-3Mi" firstAttribute="top" secondItem="SCh-qV-nHu" secondAttribute="bottom" constant="40" id="Gdk-IB-8fB"/>
-                                            <constraint firstAttribute="trailing" secondItem="I17-Cq-dnf" secondAttribute="trailing" constant="40" id="Nh6-M0-Gl8"/>
-                                            <constraint firstItem="I17-Cq-dnf" firstAttribute="leading" secondItem="N4S-px-Q0T" secondAttribute="leading" constant="40" id="OSH-ga-tuh"/>
-                                            <constraint firstAttribute="trailing" secondItem="SCh-qV-nHu" secondAttribute="trailing" constant="100" id="Wvb-Fu-DRz"/>
+                                            <constraint firstItem="I17-Cq-dnf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N4S-px-Q0T" secondAttribute="leading" constant="30" id="OSH-ga-tuh"/>
                                             <constraint firstAttribute="trailing" secondItem="xty-Su-3Mi" secondAttribute="trailing" constant="30" id="ehx-BC-1yt"/>
                                             <constraint firstItem="I17-Cq-dnf" firstAttribute="top" secondItem="xty-Su-3Mi" secondAttribute="bottom" constant="50" id="hPF-2Y-FtP"/>
                                             <constraint firstItem="xty-Su-3Mi" firstAttribute="leading" secondItem="N4S-px-Q0T" secondAttribute="leading" constant="30" id="iUM-bB-HyQ"/>
-                                            <constraint firstItem="SCh-qV-nHu" firstAttribute="leading" secondItem="N4S-px-Q0T" secondAttribute="leading" constant="100" id="luW-pz-HA9"/>
+                                            <constraint firstItem="SCh-qV-nHu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N4S-px-Q0T" secondAttribute="leading" constant="30" id="luW-pz-HA9"/>
                                             <constraint firstItem="SCh-qV-nHu" firstAttribute="top" secondItem="N4S-px-Q0T" secondAttribute="top" constant="40" id="rYM-eP-LgP"/>
+                                            <constraint firstItem="SCh-qV-nHu" firstAttribute="centerX" secondItem="N4S-px-Q0T" secondAttribute="centerX" id="wK4-im-VhK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -150,9 +150,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="hKC-kj-zEO" id="hEa-NR-niY"/>
+                        <outlet property="emailTextField" destination="hKC-kj-zEO" id="iYg-ch-qXY"/>
                         <outlet property="loginScrollView" destination="End-Jl-Nn2" id="ZGX-GQ-nYM"/>
-                        <outlet property="passwordTextField" destination="oYY-VX-m8g" id="3VA-V2-3oI"/>
+                        <outlet property="passwordTextField" destination="oYY-VX-m8g" id="R28-ex-84I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gx-uS-QCt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -7,20 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		041C10CE2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10CD2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift */; };
 		041C10D02E82F71E0069AAB8 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10CF2E82F71E0069AAB8 /* UITextField.swift */; };
+		041C10D32E8317140069AAB8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D22E8317140069AAB8 /* LoginCoordinator.swift */; };
+		041C10D92E831D9E0069AAB8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D82E831D9E0069AAB8 /* CustomButton.swift */; };
 		044D83BF2E8121BF0073CBC9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83BE2E8121BF0073CBC9 /* CustomTextField.swift */; };
 		044D83C12E8124030073CBC9 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83C02E8124030073CBC9 /* PasswordTextField.swift */; };
 		044D83C32E812C050073CBC9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83C22E812C050073CBC9 /* LoginViewController.swift */; };
-		044D83CA2E813E290073CBC9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83C92E813E290073CBC9 /* CustomButton.swift */; };
 		044D83CC2E8153100073CBC9 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83CB2E8153100073CBC9 /* EmailTextField.swift */; };
-
-		041C10D32E8317140069AAB8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D22E8317140069AAB8 /* LoginCoordinator.swift */; };
+		04727CFD2E8408F100AD543C /* LoginDIContainer .swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727CFC2E8408F100AD543C /* LoginDIContainer .swift */; };
+		04727CFF2E840A5200AD543C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727CFE2E840A5200AD543C /* LoginViewModel.swift */; };
 		048224DB2E825D2300BD801F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224DA2E825D2300BD801F /* Coordinator.swift */; };
 		048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */; };
 		048224E22E8260AE00BD801F /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224E12E8260AE00BD801F /* DIContainer.swift */; };
-
 		049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564872E7FCA6F00BD9352 /* AppDelegate.swift */; };
 		0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564892E7FCA6F00BD9352 /* SceneDelegate.swift */; };
 		049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049564902E7FCA7100BD9352 /* Assets.xcassets */; };
@@ -39,17 +38,17 @@
 /* Begin PBXFileReference section */
 		041C10CD2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardHandling.swift"; sourceTree = "<group>"; };
 		041C10CF2E82F71E0069AAB8 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		041C10D22E8317140069AAB8 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		041C10D82E831D9E0069AAB8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		044D83BE2E8121BF0073CBC9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		044D83C02E8124030073CBC9 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		044D83C22E812C050073CBC9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		044D83C92E813E290073CBC9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		044D83CB2E8153100073CBC9 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
-
-		041C10D22E8317140069AAB8 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		04727CFC2E8408F100AD543C /* LoginDIContainer .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginDIContainer .swift"; sourceTree = "<group>"; };
+		04727CFE2E840A5200AD543C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		048224DA2E825D2300BD801F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		048224E12E8260AE00BD801F /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
-
 		049564842E7FCA6F00BD9352 /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049564872E7FCA6F00BD9352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049564892E7FCA6F00BD9352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,11 +77,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-
+		041C10D72E831D850069AAB8 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				041C10D82E831D9E0069AAB8 /* CustomButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		041C10DA2E831DCB0069AAB8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				041C10D22E8317140069AAB8 /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		044D83BC2E8121960073CBC9 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
-				044D83C82E813E080073CBC9 /* Buttons */,
+				041C10D72E831D850069AAB8 /* Buttons */,
 				044D83BD2E8121A00073CBC9 /* TextFields */,
 			);
 			path = CustomComponents;
@@ -98,19 +112,11 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
-		044D83C82E813E080073CBC9 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				044D83C92E813E290073CBC9 /* CustomButton.swift */,
-			);
-			path = Buttons;
-
 		048224D92E82597300BD801F /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				048224DA2E825D2300BD801F /* Coordinator.swift */,
 				048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */,
-				041C10D22E8317140069AAB8 /* LoginCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -119,9 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				048224E12E8260AE00BD801F /* DIContainer.swift */,
+				04727CFC2E8408F100AD543C /* LoginDIContainer .swift */,
 			);
 			path = " DI";
-
 			sourceTree = "<group>";
 		};
 		0495647B2E7FCA6F00BD9352 = {
@@ -241,6 +247,7 @@
 		049564CB2E801F3F00BD9352 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				041C10DA2E831DCB0069AAB8 /* Coordinator */,
 				049564CD2E801F7500BD9352 /* ViewModel */,
 				049564CC2E801F6900BD9352 /* Views */,
 			);
@@ -259,6 +266,7 @@
 		049564CD2E801F7500BD9352 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04727CFE2E840A5200AD543C /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -334,26 +342,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
+				04727CFF2E840A5200AD543C /* LoginViewModel.swift in Sources */,
 				041C10CE2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift in Sources */,
-
 				048224E22E8260AE00BD801F /* DIContainer.swift in Sources */,
 				048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */,
 				041C10D32E8317140069AAB8 /* LoginCoordinator.swift in Sources */,
-
 				049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */,
+				04727CFD2E8408F100AD543C /* LoginDIContainer .swift in Sources */,
 				049564C62E8000A200BD9352 /* UIImageView.swift in Sources */,
 				044D83CC2E8153100073CBC9 /* EmailTextField.swift in Sources */,
 				044D83C12E8124030073CBC9 /* PasswordTextField.swift in Sources */,
 				0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */,
 				049564C92E8006E200BD9352 /* AppColors.swift in Sources */,
 				044D83BF2E8121BF0073CBC9 /* CustomTextField.swift in Sources */,
+				041C10D92E831D9E0069AAB8 /* CustomButton.swift in Sources */,
 				049564BE2E7FFEF600BD9352 /* APIEndpointConfig .swift in Sources */,
 				049564BC2E7FFEDE00BD9352 /* APIRequest.swift in Sources */,
 				048224DB2E825D2300BD801F /* Coordinator.swift in Sources */,
 				049564C42E7FFF4700BD9352 /* NetworkManager.swift in Sources */,
 				049564C02E7FFF0F00BD9352 /* APIRequestBuilder.swift in Sources */,
-				044D83CA2E813E290073CBC9 /* CustomButton.swift in Sources */,
 				049564BA2E7FFEC100BD9352 /* APIError.swift in Sources */,
 				044D83C32E812C050073CBC9 /* LoginViewController.swift in Sources */,
 				041C10D02E82F71E0069AAB8 /* UITextField.swift in Sources */,
