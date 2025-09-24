@@ -98,6 +98,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="Log In"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="logInInButtonTapped:" destination="U97-wV-iQ8" eventType="touchUpInside" id="ruQ-BT-weg"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68W-uy-2S0">
                                                         <rect key="frame" x="40" y="59" width="160" height="34.333333333333343"/>
