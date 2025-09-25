@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041C10D32E8317140069AAB8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D22E8317140069AAB8 /* LoginCoordinator.swift */; };
+		048224DB2E825D2300BD801F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224DA2E825D2300BD801F /* Coordinator.swift */; };
+		048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */; };
+		048224E22E8260AE00BD801F /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224E12E8260AE00BD801F /* DIContainer.swift */; };
 		049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564872E7FCA6F00BD9352 /* AppDelegate.swift */; };
 		0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564892E7FCA6F00BD9352 /* SceneDelegate.swift */; };
 		049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049564902E7FCA7100BD9352 /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041C10D22E8317140069AAB8 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		048224DA2E825D2300BD801F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		048224E12E8260AE00BD801F /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		049564842E7FCA6F00BD9352 /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049564872E7FCA6F00BD9352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049564892E7FCA6F00BD9352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		048224D92E82597300BD801F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				048224DA2E825D2300BD801F /* Coordinator.swift */,
+				048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */,
+				041C10D22E8317140069AAB8 /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		048224DE2E825EC500BD801F /*  DI */ = {
+			isa = PBXGroup;
+			children = (
+				048224E12E8260AE00BD801F /* DIContainer.swift */,
+			);
+			path = " DI";
+			sourceTree = "<group>";
+		};
 		0495647B2E7FCA6F00BD9352 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +118,8 @@
 		0495649C2E7FCDC600BD9352 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				048224DE2E825EC500BD801F /*  DI */,
+				048224D92E82597300BD801F /* Coordinator */,
 				049564892E7FCA6F00BD9352 /* SceneDelegate.swift */,
 				049564872E7FCA6F00BD9352 /* AppDelegate.swift */,
 			);
@@ -227,12 +255,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048224E22E8260AE00BD801F /* DIContainer.swift in Sources */,
+				048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */,
+				041C10D32E8317140069AAB8 /* LoginCoordinator.swift in Sources */,
 				049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */,
 				049564C62E8000A200BD9352 /* UIImageView.swift in Sources */,
 				0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */,
 				049564C92E8006E200BD9352 /* AppColors.swift in Sources */,
 				049564BE2E7FFEF600BD9352 /* APIEndpointConfig .swift in Sources */,
 				049564BC2E7FFEDE00BD9352 /* APIRequest.swift in Sources */,
+				048224DB2E825D2300BD801F /* Coordinator.swift in Sources */,
 				049564C42E7FFF4700BD9352 /* NetworkManager.swift in Sources */,
 				049564C02E7FFF0F00BD9352 /* APIRequestBuilder.swift in Sources */,
 				049564BA2E7FFEC100BD9352 /* APIError.swift in Sources */,
