@@ -20,10 +20,18 @@ class LoginViewController: UIViewController {
         configureKeyboardHandling()
     }
     
-    private func configureKeyboardHandling() {
+    private func setupTextFieldNavigation() {
         emailTextField.enableNextField(nextField: passwordTextField)
         passwordTextField.enableNextField(nextField: nil)
+    }
+    
+    private func setupKeyboardObservers() {
         observeKeyboard(for: loginScrollView)
+    }
+    
+    private func configureKeyboardHandling() {
+        setupTextFieldNavigation()
+        setupKeyboardObservers()
     }
     
     deinit {
