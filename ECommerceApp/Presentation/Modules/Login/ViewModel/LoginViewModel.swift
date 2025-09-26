@@ -9,4 +9,9 @@ import Foundation
 
 class LoginViewModel {
     
+    private weak var coordinator: LoginCoordinator?
+    
+    init(coordinator: LoginCoordinator) {
+        self.coordinator = coordinator
+    }
 }

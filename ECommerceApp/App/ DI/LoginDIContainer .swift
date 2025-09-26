@@ -7,18 +7,12 @@
 
 import UIKit
 
-final class LoginDIContainer {
+class LoginDIContainer {
     
-    func makeLoginViewController() -> LoginViewController {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let vc = storyboard.instantiateViewController(
-            withIdentifier: "LoginViewController"
-        ) as! LoginViewController
-        vc.viewModel = makeLoginViewModel()
-        return vc
-    }
+    static let shared = LoginDIContainer()
+    private init() {}
     
-    func makeLoginViewModel() -> LoginViewModel {
-        return LoginViewModel()
+    func getLoginViewModel(coordinator: LoginCoordinator) -> LoginViewModel {
+        return LoginViewModel(coordinator: coordinator)
     }
 }

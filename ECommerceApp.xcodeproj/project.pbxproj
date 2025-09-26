@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		041C10CE2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10CD2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift */; };
 		041C10D02E82F71E0069AAB8 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10CF2E82F71E0069AAB8 /* UITextField.swift */; };
-		041C10D32E8317140069AAB8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D22E8317140069AAB8 /* LoginCoordinator.swift */; };
 		041C10D92E831D9E0069AAB8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D82E831D9E0069AAB8 /* CustomButton.swift */; };
 		044D83BF2E8121BF0073CBC9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83BE2E8121BF0073CBC9 /* CustomTextField.swift */; };
 		044D83C12E8124030073CBC9 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83C02E8124030073CBC9 /* PasswordTextField.swift */; };
@@ -19,7 +18,6 @@
 		04727CFF2E840A5200AD543C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04727CFE2E840A5200AD543C /* LoginViewModel.swift */; };
 		048224DB2E825D2300BD801F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224DA2E825D2300BD801F /* Coordinator.swift */; };
 		048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */; };
-		048224E22E8260AE00BD801F /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224E12E8260AE00BD801F /* DIContainer.swift */; };
 		049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564872E7FCA6F00BD9352 /* AppDelegate.swift */; };
 		0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564892E7FCA6F00BD9352 /* SceneDelegate.swift */; };
 		049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049564902E7FCA7100BD9352 /* Assets.xcassets */; };
@@ -33,6 +31,7 @@
 		049564C62E8000A200BD9352 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564C52E8000A200BD9352 /* UIImageView.swift */; };
 		049564C92E8006E200BD9352 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564C82E8006E200BD9352 /* AppColors.swift */; };
 		049564CF2E801F9700BD9352 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049564CE2E801F9700BD9352 /* Login.storyboard */; };
+		04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D22E8317140069AAB8 /* LoginCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +47,6 @@
 		04727CFE2E840A5200AD543C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		048224DA2E825D2300BD801F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
-		048224E12E8260AE00BD801F /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		049564842E7FCA6F00BD9352 /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049564872E7FCA6F00BD9352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049564892E7FCA6F00BD9352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		048224DE2E825EC500BD801F /*  DI */ = {
 			isa = PBXGroup;
 			children = (
-				048224E12E8260AE00BD801F /* DIContainer.swift */,
 				04727CFC2E8408F100AD543C /* LoginDIContainer .swift */,
 			);
 			path = " DI";
@@ -344,10 +341,9 @@
 			files = (
 				04727CFF2E840A5200AD543C /* LoginViewModel.swift in Sources */,
 				041C10CE2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift in Sources */,
-				048224E22E8260AE00BD801F /* DIContainer.swift in Sources */,
 				048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */,
-				041C10D32E8317140069AAB8 /* LoginCoordinator.swift in Sources */,
 				049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */,
+				04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */,
 				04727CFD2E8408F100AD543C /* LoginDIContainer .swift in Sources */,
 				049564C62E8000A200BD9352 /* UIImageView.swift in Sources */,
 				044D83CC2E8153100073CBC9 /* EmailTextField.swift in Sources */,
