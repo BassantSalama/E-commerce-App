@@ -7,23 +7,20 @@
 
 import UIKit
 
-final class AppFlowCoordinator: Coordinator {
+class AppFlowCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     
-    private let diContainer: DIContainer
-    
-    init(navigationController: UINavigationController, diContainer: DIContainer) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.diContainer = diContainer
     }
-    
     
     func start() {
         navigationController.viewControllers = []
     }
     
+    // MARK: - Child Coordinator Management
     func addChildCoordinator(_ coordinator: Coordinator) {
         childCoordinators.append(coordinator)
     }
@@ -31,16 +28,4 @@ final class AppFlowCoordinator: Coordinator {
     func removeChildCoordinator(_ coordinator: Coordinator) {
         childCoordinators.removeAll { $0 === coordinator }
     }
-    
-    func startFlowCoordinator(_ coordinatorType: Coordinator.Type) {
-        
-        let coordinator: Coordinator
-        coordinator = LoginCoordinator(navigationController: navigationController, diContainer: diContainer)
-        
-        addChildCoordinator(coordinator)
-        coordinator.start()
-    }
-    
-    
 }
-
