@@ -7,48 +7,27 @@
 
 import UIKit
 
-final class AppFlowCoordinator: Coordinator {
+class AppFlowCoordinator: Coordinator {
     
     var navigationController: UINavigationController
-    var childCoordinators: [Coordinator] = []
+    private var childCoordinators: [Coordinator] = []
     
-    private let diContainer: DIContainer
-    
-    init(navigationController: UINavigationController, diContainer: DIContainer) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.diContainer = diContainer
     }
     
     func start() {
-        startFlowCoordinator(LoginCoordinator.self)
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        addChildCoordinator(loginCoordinator)
+        loginCoordinator.start()
     }
     
-    func addChildCoordinator(_ coordinator: Coordinator) {
+    // MARK: - Child Coordinator Management
+    private func addChildCoordinator(_ coordinator: Coordinator) {
         childCoordinators.append(coordinator)
     }
     
-    func removeChildCoordinator(_ coordinator: Coordinator) {
+    private func removeChildCoordinator(_ coordinator: Coordinator) {
         childCoordinators.removeAll { $0 === coordinator }
     }
-    
-    func startFlowCoordinator(_ coordinatorType: Coordinator.Type) {
-        let coordinator: Coordinator
-        
-        switch coordinatorType {
-        case is LoginCoordinator.Type:
-            let loginDIContainer = diContainer.makeLoginDIContainer()
-            coordinator = LoginCoordinator(
-                navigationController: navigationController,
-                diContainer: loginDIContainer
-            )
-            
-        default:
-            print(" Unsupported coordinator type: \(coordinatorType)")
-            return
-        }
-        
-        addChildCoordinator(coordinator)
-        coordinator.start()
-    }
 }
-

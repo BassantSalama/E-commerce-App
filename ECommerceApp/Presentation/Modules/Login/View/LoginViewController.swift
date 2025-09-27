@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class LoginViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: PasswordTextField!
     
     var viewModel: LoginViewModel!
+    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +23,18 @@ class LoginViewController: UIViewController {
         setupBindings()
     }
     
-    private func configureKeyboardHandling() {
+    private func setupTextFieldNavigation() {
         emailTextField.enableNextField(nextField: passwordTextField)
         passwordTextField.enableNextField(nextField: nil)
+    }
+    
+    private func setupKeyboardObservers() {
         observeKeyboard(for: loginScrollView)
+    }
+    
+    private func configureKeyboardHandling() {
+        setupTextFieldNavigation()
+        setupKeyboardObservers()
     }
     
     @IBAction func logInInButtonTapped(_ sender: Any) {
@@ -34,22 +44,27 @@ class LoginViewController: UIViewController {
     }
     
     private func setupBindings() {
-        viewModel.onLoginSuccess = {
-            DispatchQueue.main.async {
+        bindLoginSuccess()
+        bindLoginFailure()
+    }
+    
+    private func bindLoginSuccess() {
+        viewModel.loginSuccess
+            .receive(on: DispatchQueue.main)
+            .sink { 
                 print("Login Success")
             }
-        }
-        viewModel.onLoginFailure = { [weak self] error in
-            DispatchQueue.main.async {
+            .store(in: &cancellables)
+    }
+    
+    private func bindLoginFailure() {
+        viewModel.loginFailure
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] error in
                 let alert = UIAlertController(title: "Login Error", message: error, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default))
                 self?.present(alert, animated: true)
             }
-        }
+            .store(in: &cancellables)
     }
-    
-    deinit {
-        removeKeyboardObservers()
-    }
-    
 }

@@ -7,17 +7,29 @@
 
 import UIKit
 
-final class LoginCoordinator: Coordinator {
-    var navigationController: UINavigationController
-    private let diContainer: LoginDIContainer
+class LoginCoordinator: Coordinator {
     
-    init(navigationController: UINavigationController, diContainer: LoginDIContainer) {
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.diContainer = diContainer
     }
     
     func start() {
-        let loginVC = diContainer.makeLoginViewController()
-        navigationController.setViewControllers([loginVC], animated: false)
+        guard let loginVC = makeLoginViewController() else { return }
+        navigationController.pushViewController(loginVC, animated: true)
+    }
+    
+    private func makeLoginViewController() -> LoginViewController? {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        
+        guard let loginVC = storyboard.instantiateViewController(
+            withIdentifier: "LoginViewController"
+        ) as? LoginViewController else {
+            return nil
+        }
+        loginVC.viewModel = LoginDIContainer.shared.getLoginViewModel(coordinator: self)
+        
+        return loginVC
     }
 }

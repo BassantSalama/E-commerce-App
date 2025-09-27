@@ -5,24 +5,36 @@
 //  Created by mac on 24/09/2025.
 //
 
+import Combine
 import FirebaseAuth
 import FirebaseFirestore
 
 class LoginUseCase: LoginUseCaseProtocol {
-    func execute(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(.failure(error))
-            } else if let user = authResult?.user {
+    
+    func execute(email: String, password: String) -> AnyPublisher<Void, Error> {
+        Future { promise in
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let error = error {
+                    promise(.failure(error))
+                    return
+                }
+                
+                guard let user = authResult?.user else {
+                    promise(.failure(NSError(
+                        domain: "LoginError",
+                        code: -1,
+                        userInfo: [NSLocalizedDescriptionKey: "User not found"]
+                    )))
+                    return
+                }
+                
                 let db = Firestore.firestore()
                 let userRef = db.collection("users").document(user.uid)
                 
-                userRef.getDocument { document, error in
+                userRef.getDocument { document, _ in
                     if let document = document, document.exists {
-                        
-                        completion(.success(()))
+                        promise(.success(()))
                     } else {
-                        
                         let userData: [String: Any] = [
                             "id": user.uid,
                             "email": user.email ?? "",
@@ -30,14 +42,15 @@ class LoginUseCase: LoginUseCaseProtocol {
                         ]
                         userRef.setData(userData) { error in
                             if let error = error {
-                                completion(.failure(error))
+                                promise(.failure(error))
                             } else {
-                                completion(.success(()))
+                                promise(.success(()))
                             }
                         }
                     }
                 }
             }
         }
+        .eraseToAnyPublisher()
     }
 }
