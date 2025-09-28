@@ -23,41 +23,45 @@ class LoginViewController: UIViewController {
         setupBindings()
     }
     
-    private func setupTextFieldNavigation() {
-        emailTextField.enableNextField(nextField: passwordTextField)
-        passwordTextField.enableNextField(nextField: nil)
-    }
-    
-    private func setupKeyboardObservers() {
-        observeKeyboard(for: loginScrollView)
-    }
-    
-    private func configureKeyboardHandling() {
-        setupTextFieldNavigation()
-        setupKeyboardObservers()
-    }
-    
     @IBAction func logInInButtonTapped(_ sender: Any) {
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         viewModel.login(email: email, password: password)
     }
+}
+
+// MARK: - Private Methods
+private extension LoginViewController {
     
-    private func setupBindings() {
+    func configureKeyboardHandling() {
+        setupTextFieldNavigation()
+        setupKeyboardObservers()
+    }
+    
+    func setupTextFieldNavigation() {
+        emailTextField.enableNextField(nextField: passwordTextField)
+        passwordTextField.enableNextField(nextField: nil)
+    }
+    
+    func setupKeyboardObservers() {
+        observeKeyboard(for: loginScrollView)
+    }
+    
+    func setupBindings() {
         bindLoginSuccess()
         bindLoginFailure()
     }
     
-    private func bindLoginSuccess() {
+    func bindLoginSuccess() {
         viewModel.loginSuccess
             .receive(on: DispatchQueue.main)
-            .sink { 
+            .sink {
                 print("Login Success")
             }
             .store(in: &cancellables)
     }
     
-    private func bindLoginFailure() {
+    func bindLoginFailure() {
         viewModel.loginFailure
             .receive(on: DispatchQueue.main)
             .sink { [weak self] error in

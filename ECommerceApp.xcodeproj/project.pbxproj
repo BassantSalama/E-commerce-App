@@ -40,6 +40,7 @@
 		049564C62E8000A200BD9352 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564C52E8000A200BD9352 /* UIImageView.swift */; };
 		049564C92E8006E200BD9352 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564C82E8006E200BD9352 /* AppColors.swift */; };
 		049564CF2E801F9700BD9352 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049564CE2E801F9700BD9352 /* Login.storyboard */; };
+		04A4B8D42E89C1A200E9DACC /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4B8D32E89C1A200E9DACC /* LoginRepository.swift */; };
 		04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D22E8317140069AAB8 /* LoginCoordinator.swift */; };
 		04BA90532E8743D800B095CD /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA90522E8743D800B095CD /* Validator.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		049564C52E8000A200BD9352 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		049564C82E8006E200BD9352 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		049564CE2E801F9700BD9352 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		04A4B8D32E89C1A200E9DACC /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		04BA90522E8743D800B095CD /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,6 +239,7 @@
 		0495649E2E7FD52E00BD9352 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				04A4B8D22E89C18B00E9DACC /* Repository */,
 				049564B82E7FFEA000BD9352 /* Network */,
 			);
 			path = Data;
@@ -314,6 +317,22 @@
 				04727CFE2E840A5200AD543C /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04A4B8D22E89C18B00E9DACC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				04A4B8D52E89D23B00E9DACC /* LoginRepository */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		04A4B8D52E89D23B00E9DACC /* LoginRepository */ = {
+			isa = PBXGroup;
+			children = (
+				04A4B8D32E89C1A200E9DACC /* LoginRepository.swift */,
+			);
+			path = LoginRepository;
 			sourceTree = "<group>";
 		};
 		04BA90512E8743C100B095CD /* Validator */ = {
@@ -424,6 +443,7 @@
 				049564BE2E7FFEF600BD9352 /* APIEndpointConfig .swift in Sources */,
 				049564BC2E7FFEDE00BD9352 /* APIRequest.swift in Sources */,
 				048224DB2E825D2300BD801F /* Coordinator.swift in Sources */,
+				04A4B8D42E89C1A200E9DACC /* LoginRepository.swift in Sources */,
 				04727D0A2E8437D300AD543C /* LoginUseCaseProtocol.swift in Sources */,
 				049564C42E7FFF4700BD9352 /* NetworkManager.swift in Sources */,
 				049564C02E7FFF0F00BD9352 /* APIRequestBuilder.swift in Sources */,

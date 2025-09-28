@@ -21,7 +21,6 @@ class AppFlowCoordinator: Coordinator {
         addChildCoordinator(loginCoordinator)
         loginCoordinator.start()
     }
-    
     // MARK: - Child Coordinator Management
     private func addChildCoordinator(_ coordinator: Coordinator) {
         childCoordinators.append(coordinator)
