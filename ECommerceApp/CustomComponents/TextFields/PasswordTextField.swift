@@ -32,7 +32,6 @@ class PasswordTextField: CustomTextField {
         self.isSecureTextEntry = true
         self.placeholder = "Password"
         
-        // Add target
         eyeButton.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
         
         // Container with padding
