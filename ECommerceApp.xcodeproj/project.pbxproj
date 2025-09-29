@@ -43,6 +43,14 @@
 		04A4B8D42E89C1A200E9DACC /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4B8D32E89C1A200E9DACC /* LoginRepository.swift */; };
 		04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D22E8317140069AAB8 /* LoginCoordinator.swift */; };
 		04BA90532E8743D800B095CD /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA90522E8743D800B095CD /* Validator.swift */; };
+		04FD42422E8AF30100453598 /* SignUpDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD42412E8AF30100453598 /* SignUpDIContainer.swift */; };
+		04FD42462E8AF38900453598 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FD42452E8AF38900453598 /* SignUp.storyboard */; };
+		04FD42482E8AF3C000453598 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD42472E8AF3C000453598 /* SignupViewModel.swift */; };
+		04FD424A2E8AF3E600453598 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD42492E8AF3E600453598 /* SignUpCoordinator.swift */; };
+		04FD424D2E8AFCB300453598 /* SignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD424C2E8AFCB300453598 /* SignUpRepository.swift */; };
+		04FD424F2E8AFCE900453598 /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD424E2E8AFCE900453598 /* SignUpUseCase.swift */; };
+		04FD42512E8AFD1C00453598 /* SignUpUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD42502E8AFD1C00453598 /* SignUpUseCaseProtocol.swift */; };
+		04FD42532E8B011400453598 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD42432E8AF34600453598 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +86,14 @@
 		049564CE2E801F9700BD9352 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		04A4B8D32E89C1A200E9DACC /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		04BA90522E8743D800B095CD /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		04FD42412E8AF30100453598 /* SignUpDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDIContainer.swift; sourceTree = "<group>"; };
+		04FD42432E8AF34600453598 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		04FD42452E8AF38900453598 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		04FD42472E8AF3C000453598 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		04FD42492E8AF3E600453598 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		04FD424C2E8AFCB300453598 /* SignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepository.swift; sourceTree = "<group>"; };
+		04FD424E2E8AFCE900453598 /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
+		04FD42502E8AFD1C00453598 /* SignUpUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCaseProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				04727D092E8437D300AD543C /* LoginUseCaseProtocol.swift */,
+				04FD42502E8AFD1C00453598 /* SignUpUseCaseProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -152,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				04727D0B2E84380C00AD543C /* LoginUseCase.swift */,
+				04FD424E2E8AFCE900453598 /* SignUpUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -169,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				04727CFC2E8408F100AD543C /* LoginDIContainer .swift */,
+				04FD42412E8AF30100453598 /* SignUpDIContainer.swift */,
 			);
 			path = " DI";
 			sourceTree = "<group>";
@@ -287,6 +306,7 @@
 		049564CA2E801E0800BD9352 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				04FD423D2E8AF1F800453598 /* SignUp */,
 				049564CB2E801F3F00BD9352 /* Login */,
 			);
 			path = Modules;
@@ -322,6 +342,7 @@
 		04A4B8D22E89C18B00E9DACC /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				04FD424B2E8AFC8C00453598 /* SignUpRepository */,
 				04A4B8D52E89D23B00E9DACC /* LoginRepository */,
 			);
 			path = Repository;
@@ -341,6 +362,49 @@
 				04BA90522E8743D800B095CD /* Validator.swift */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		04FD423D2E8AF1F800453598 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				04FD42402E8AF24800453598 /* View */,
+				04FD423F2E8AF23F00453598 /* ViewModel */,
+				04FD423E2E8AF23700453598 /* Coordinator */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		04FD423E2E8AF23700453598 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				04FD42492E8AF3E600453598 /* SignUpCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		04FD423F2E8AF23F00453598 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04FD42472E8AF3C000453598 /* SignupViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04FD42402E8AF24800453598 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04FD42432E8AF34600453598 /* SignUpViewController.swift */,
+				04FD42452E8AF38900453598 /* SignUp.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04FD424B2E8AFC8C00453598 /* SignUpRepository */ = {
+			isa = PBXGroup;
+			children = (
+				04FD424C2E8AFCB300453598 /* SignUpRepository.swift */,
+			);
+			path = SignUpRepository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +480,7 @@
 				04727D012E84329700AD543C /* GoogleService-Info.plist in Resources */,
 				049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */,
 				049564CF2E801F9700BD9352 /* Login.storyboard in Resources */,
+				04FD42462E8AF38900453598 /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,16 +491,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FD42532E8B011400453598 /* SignUpViewController.swift in Sources */,
 				04727CFF2E840A5200AD543C /* LoginViewModel.swift in Sources */,
 				041C10CE2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift in Sources */,
 				048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */,
 				04727D0C2E84380C00AD543C /* LoginUseCase.swift in Sources */,
 				049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */,
 				04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */,
+				04FD424D2E8AFCB300453598 /* SignUpRepository.swift in Sources */,
+				04FD42482E8AF3C000453598 /* SignupViewModel.swift in Sources */,
 				04727CFD2E8408F100AD543C /* LoginDIContainer .swift in Sources */,
 				049564C62E8000A200BD9352 /* UIImageView.swift in Sources */,
 				044D83CC2E8153100073CBC9 /* EmailTextField.swift in Sources */,
 				044D83C12E8124030073CBC9 /* PasswordTextField.swift in Sources */,
+				04FD42422E8AF30100453598 /* SignUpDIContainer.swift in Sources */,
+				04FD424F2E8AFCE900453598 /* SignUpUseCase.swift in Sources */,
 				0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */,
 				049564C92E8006E200BD9352 /* AppColors.swift in Sources */,
 				044D83BF2E8121BF0073CBC9 /* CustomTextField.swift in Sources */,
@@ -449,6 +519,8 @@
 				049564C02E7FFF0F00BD9352 /* APIRequestBuilder.swift in Sources */,
 				049564BA2E7FFEC100BD9352 /* APIError.swift in Sources */,
 				044D83C32E812C050073CBC9 /* LoginViewController.swift in Sources */,
+				04FD42512E8AFD1C00453598 /* SignUpUseCaseProtocol.swift in Sources */,
+				04FD424A2E8AF3E600453598 /* SignUpCoordinator.swift in Sources */,
 				04BA90532E8743D800B095CD /* Validator.swift in Sources */,
 				041C10D02E82F71E0069AAB8 /* UITextField.swift in Sources */,
 				049564C22E7FFF2D00BD9352 /* ResponseHandler.swift in Sources */,

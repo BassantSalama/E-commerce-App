@@ -28,6 +28,12 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text ?? ""
         viewModel.login(email: email, password: password)
     }
+    
+    
+    @IBAction func doNotHaveAccountTapped(_ sender: Any) {
+        viewModel.navigateToSignUp()
+    }
+    
 }
 
 // MARK: - Private Methods

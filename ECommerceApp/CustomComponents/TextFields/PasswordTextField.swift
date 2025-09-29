@@ -10,6 +10,12 @@ import UIKit
 // MARK: - Password TextField
 class PasswordTextField: CustomTextField {
     
+    @IBInspectable var placeholderText: String? {
+        didSet {
+            self.placeholder = placeholderText
+        }
+    }
+    
     private let eyeButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
@@ -30,7 +36,6 @@ class PasswordTextField: CustomTextField {
     
     private func setupPassword() {
         self.isSecureTextEntry = true
-        self.placeholder = "Password"
         
         eyeButton.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
         

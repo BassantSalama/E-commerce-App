@@ -59,5 +59,10 @@ class LoginViewModel {
             break
         }
     }
+    // MARK: - Navigation
+    func navigateToSignUp() {
+        coordinator?.navigateToSignUp()
+    }
+
 }
 
