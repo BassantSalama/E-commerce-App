@@ -63,6 +63,5 @@ class LoginViewModel {
     func navigateToSignUp() {
         coordinator?.navigateToSignUp()
     }
-
 }
 

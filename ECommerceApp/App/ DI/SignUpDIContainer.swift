@@ -13,7 +13,20 @@ class SignUpDIContainer {
     static let shared = SignUpDIContainer()
     private init() {}
     
+    // MARK: - ViewModel
     func getSignUpViewModel(coordinator: SignUpCoordinator) -> SignUpViewModel {
-        return SignUpViewModel(coordinator: coordinator)
+        let useCase = getSignUpUseCase()
+        return SignUpViewModel(coordinator: coordinator, useCase: useCase)
+    }
+    
+    // MARK: - UseCase
+    private func getSignUpUseCase() -> SignUpUseCaseProtocol {
+        let repository = getSignUpRepository()
+        return SignUpUseCase(repository: repository)
+    }
+    
+    // MARK: - Repository
+    private func getSignUpRepository() -> SignUpRepositoryProtocol {
+        return SignUpRepository()
     }
 }

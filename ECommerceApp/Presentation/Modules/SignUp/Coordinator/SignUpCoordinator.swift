@@ -36,4 +36,10 @@ class SignUpCoordinator: Coordinator {
         signUpVC.viewModel = SignUpDIContainer.shared.getSignUpViewModel(coordinator: self)
         return signUpVC
     }
+    
+    // MARK: - Navigation
+    func navigateToLogin() {
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController, parentCoordinator: parentCoordinator)
+        loginCoordinator.start()
+    }
 }
