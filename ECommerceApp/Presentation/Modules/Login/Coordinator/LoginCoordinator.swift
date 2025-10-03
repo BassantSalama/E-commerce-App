@@ -20,7 +20,6 @@ class LoginCoordinator: Coordinator {
     }
     
     func start() {
-        // Add self to parent's child coordinators
         parentCoordinator?.addChildCoordinator(self)
         
         guard let loginVC = makeLoginViewController() else { return }
@@ -38,12 +37,9 @@ class LoginCoordinator: Coordinator {
     }
     
     // MARK: - Navigation
-        func navigateToSignUp() {
-            let signUpCoordinator = SignUpCoordinator(
-                navigationController: navigationController,
-                parentCoordinator: self
-            )
-            addChildCoordinator(signUpCoordinator)
-            signUpCoordinator.start()
-        }
+    func navigateToSignUp() {
+        let signUpCoordinator = SignUpCoordinator(navigationController: navigationController,parentCoordinator: self)
+        addChildCoordinator(signUpCoordinator)
+        signUpCoordinator.start()
+    }
 }

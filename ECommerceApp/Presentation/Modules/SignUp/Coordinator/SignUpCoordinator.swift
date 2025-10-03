@@ -20,7 +20,6 @@ class SignUpCoordinator: Coordinator {
     }
     
     func start() {
-        // Add self to parent's child coordinators
         parentCoordinator?.addChildCoordinator(self)
         
         guard let signUpVC = makeSignUpViewController() else { return }

@@ -29,11 +29,9 @@ class LoginViewController: UIViewController {
         viewModel.login(email: email, password: password)
     }
     
-    
     @IBAction func doNotHaveAccountTapped(_ sender: Any) {
-        viewModel.navigateToSignUp()
+        viewModel.didTapDoNotHaveAccount()
     }
-    
 }
 
 // MARK: - Private Methods
@@ -71,9 +69,11 @@ private extension LoginViewController {
         viewModel.loginFailure
             .receive(on: DispatchQueue.main)
             .sink { [weak self] error in
-                let alert = UIAlertController(title: "Login Error", message: error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self?.present(alert, animated: true)
+                self?.showAlert(
+                    title: LoginConstants.Alerts.errorTitle,
+                    message: error,
+                    actionTitle: LoginConstants.Alerts.okAction
+                )
             }
             .store(in: &cancellables)
     }

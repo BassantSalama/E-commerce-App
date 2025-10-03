@@ -25,23 +25,26 @@ class SignUpViewModel {
     }
     
     // MARK: - SignUp
-    func signUp(email: String, password: String, confirmPassword: String) {
+    func signUp(_ request: SignUpRequest) {
         do {
-            try validateInput(email: email, password: password, confirmPassword: confirmPassword)
-            executeSignUp(email: email, password: password)
+            try validateInput(request)
+            executeSignUp(email: request.email, password: request.password)
         } catch {
             signUpFailure.send(error.localizedDescription)
         }
     }
     
     // MARK: - Input Validation
-    private func validateInput(email: String, password: String, confirmPassword: String) throws {
-        guard password == confirmPassword else {
-            throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Passwords do not match."])
+    private func validateInput(_ request: SignUpRequest) throws {
+        guard request.password == request.confirmPassword else {
+            throw NSError(
+                domain: "",
+                code: 0,
+                userInfo: [NSLocalizedDescriptionKey: SignUpConstants.Alerts.passwordMismatch]
+            )
         }
-        try Validator.validate(email: email, password: password)
+        try signUpValidator.validate(email: request.email, password: request.password)
     }
-    
     // MARK: - Use Case Execution
     private func executeSignUp(email: String, password: String) {
         signUpUseCase.execute(email: email, password: password)
@@ -52,7 +55,6 @@ class SignUpViewModel {
             }
             .store(in: &cancellables)
     }
-    
     // MARK: - Handle Completion
     private func handleCompletion(_ completion: Subscribers.Completion<Error>) {
         switch completion {
@@ -62,9 +64,8 @@ class SignUpViewModel {
             break
         }
     }
-    
     // MARK: - Navigation
-    func navigateToLogin() {
+    func didTappedHaveAccount() {
         coordinator?.navigateToLogin()
     }
 }

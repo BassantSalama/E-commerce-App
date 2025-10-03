@@ -36,7 +36,7 @@ class LoginViewModel {
     
     // MARK: - Input Validation
     private func validateInput(email: String, password: String) throws {
-        try Validator.validate(email: email, password: password)
+        try LoginValidator.validate(email: email, password: password)
     }
     
     // MARK: - Use Case Execution
@@ -60,7 +60,7 @@ class LoginViewModel {
         }
     }
     // MARK: - Navigation
-    func navigateToSignUp() {
+    func didTapDoNotHaveAccount() {
         coordinator?.navigateToSignUp()
     }
 }

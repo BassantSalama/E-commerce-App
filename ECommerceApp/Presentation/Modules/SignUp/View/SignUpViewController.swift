@@ -31,15 +31,16 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
         
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        let confirmPassword = confirmPasswordTextField.text ?? ""
-        
-        viewModel.signUp(email: email, password: password, confirmPassword: confirmPassword)
+        let request = SignUpRequest(
+            email: emailTextField.text ?? "",
+            password: passwordTextField.text ?? "",
+            confirmPassword: confirmPasswordTextField.text ?? ""
+        )
+        viewModel.signUp(request)
     }
     
     @IBAction func haveAccountTapped(_ sender: Any) {
-        viewModel.navigateToLogin()
+        viewModel.didTappedHaveAccount()
     }
 }
 
@@ -52,8 +53,20 @@ private extension SignUpViewController {
     }
     
     func setupTextFieldNavigation() {
+        setupEmailTextField()
+        setupPasswordTextField()
+        setupConfirmPasswordTextField()
+    }
+    
+    private func setupEmailTextField() {
         emailTextField.enableNextField(nextField: passwordTextField)
+    }
+    
+    private func setupPasswordTextField() {
         passwordTextField.enableNextField(nextField: confirmPasswordTextField)
+    }
+    
+    private func setupConfirmPasswordTextField() {
         confirmPasswordTextField.enableNextField(nextField: nil)
     }
     
@@ -70,7 +83,11 @@ private extension SignUpViewController {
         viewModel.signUpSuccess
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
-                self?.showAlert(title: "Success", message: "Account created successfully!")
+                self?.showAlert(
+                    title: SignUpConstants.Alerts.successTitle,
+                    message: SignUpConstants.Alerts.successMessage,
+                    actionTitle: SignUpConstants.Alerts.continueAction
+                )
             }
             .store(in: &cancellables)
     }
@@ -79,17 +96,12 @@ private extension SignUpViewController {
         viewModel.signUpFailure
             .receive(on: DispatchQueue.main)
             .sink { [weak self] errorMessage in
-                self?.showAlert(title: "Error", message: errorMessage)
+                self?.showAlert(
+                    title: SignUpConstants.Alerts.errorTitle,
+                    message: errorMessage,
+                    actionTitle: SignUpConstants.Alerts.okAction
+                )
             }
             .store(in: &cancellables)
-    }
-    
-    
-    func showAlert(title: String, message: String) {
-        DispatchQueue.main.async {
-                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(alert, animated: true)
-            }
     }
 }
