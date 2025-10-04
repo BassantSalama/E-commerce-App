@@ -64,5 +64,9 @@ class LoginViewModel {
     func didTapDoNotHaveAccount() {
         coordinator?.navigateToSignUp()
     }
+    
+    func didTapForgotPassword(){
+        coordinator?.navigateToForgotPassword()
+    }
 }
 

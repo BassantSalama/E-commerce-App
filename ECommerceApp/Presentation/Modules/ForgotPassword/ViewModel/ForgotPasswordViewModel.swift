@@ -5,4 +5,11 @@
 //  Created by mac on 04/10/2025.
 //
 
-import Foundation
+class ForgotPasswordViewModel {
+    private weak var coordinator: ForgotPasswordCoordinator?
+    
+    init(coordinator: ForgotPasswordCoordinator) {
+        self.coordinator = coordinator
+    }
+    
+}

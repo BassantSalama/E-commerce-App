@@ -31,6 +31,10 @@ class LoginViewController: UIViewController {
     @IBAction func doNotHaveAccountTapped(_ sender: Any) {
         viewModel.didTapDoNotHaveAccount()
     }
+    
+    @IBAction func forgotPasswordTapped(_ sender: Any) {
+        viewModel.didTapForgotPassword()
+    }
 }
 
 // MARK: - Private Methods

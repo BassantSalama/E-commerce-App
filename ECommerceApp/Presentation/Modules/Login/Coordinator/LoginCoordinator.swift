@@ -42,4 +42,11 @@ class LoginCoordinator: Coordinator {
         addChildCoordinator(signUpCoordinator)
         signUpCoordinator.start()
     }
+    
+    func navigateToForgotPassword() {
+        let forgotPasswordCoordinator = ForgotPasswordCoordinator( navigationController: navigationController,parentCoordinator: self )
+        addChildCoordinator(forgotPasswordCoordinator)
+        forgotPasswordCoordinator.start() }
+    
 }
+
