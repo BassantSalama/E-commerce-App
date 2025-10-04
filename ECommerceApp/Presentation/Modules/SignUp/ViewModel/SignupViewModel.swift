@@ -25,26 +25,27 @@ class SignUpViewModel {
     }
     
     // MARK: - SignUp
-    func signUp(_ request: SignUpModel) {
+    func signUp(_ input: SignUpModel) {
         do {
-            try validateInput(request)
-            executeSignUp(email: request.email, password: request.password)
+            try validateInput(input)
+            executeSignUp(email: input.email, password: input.password)
         } catch {
             signUpFailure.send(error.localizedDescription)
         }
     }
     
     // MARK: - Input Validation
-    private func validateInput(_ request: SignUpModel) throws {
-        guard request.password == request.confirmPassword else {
+    private func validateInput(_ input: SignUpModel) throws {
+        guard input.password == input.confirmPassword else {
             throw NSError(
                 domain: "",
                 code: 0,
                 userInfo: [NSLocalizedDescriptionKey: SignUpConstants.Alerts.passwordMismatch]
             )
         }
-        try signUpValidator.validate(email: request.email, password: request.password)
+        try signUpValidator.validate(email: input.email, password: input.password)
     }
+    
     // MARK: - Use Case Execution
     private func executeSignUp(email: String, password: String) {
         signUpUseCase.execute(email: email, password: password)
