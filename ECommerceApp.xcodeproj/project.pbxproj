@@ -123,12 +123,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04119EEB2E9018C300660FA9 /* constants */ = {
+		04119EEB2E9018C300660FA9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				04119EEC2E9018D600660FA9 /* SignUpConstants.swift */,
 			);
-			path = constants;
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		04119EEE2E901A7A00660FA9 /* Validator */ = {
@@ -413,7 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				04119EEE2E901A7A00660FA9 /* Validator */,
-				04119EEB2E9018C300660FA9 /* constants */,
+				04119EEB2E9018C300660FA9 /* Constants */,
 				04FD42402E8AF24800453598 /* View */,
 				04FD423F2E8AF23F00453598 /* ViewModel */,
 				04FD423E2E8AF23700453598 /* Coordinator */,

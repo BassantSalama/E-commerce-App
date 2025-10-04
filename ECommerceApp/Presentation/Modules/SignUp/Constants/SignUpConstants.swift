@@ -8,6 +8,12 @@
 import Foundation
 
 enum SignUpConstants {
+    
+    enum StoryboardConstants {
+        static let name = "SignUp"
+        static let viewControllerID = "SignUpViewController"
+    }
+    
     enum Alerts {
         static let successTitle = "Success"
         static let successMessage = "Account created successfully!"

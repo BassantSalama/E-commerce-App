@@ -27,9 +27,9 @@ class SignUpCoordinator: Coordinator {
     }
     
     private func makeSignUpViewController() -> SignUpViewController? {
-        let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
+        let storyboard = UIStoryboard(name: SignUpConstants.StoryboardConstants.name, bundle: nil)
         guard let signUpVC = storyboard.instantiateViewController(
-            withIdentifier: "SignUpViewController"
+            withIdentifier: SignUpConstants.StoryboardConstants.viewControllerID
         ) as? SignUpViewController else { return nil }
         
         signUpVC.viewModel = SignUpDIContainer.shared.getSignUpViewModel(coordinator: self)
