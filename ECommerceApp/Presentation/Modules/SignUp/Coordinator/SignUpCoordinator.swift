@@ -1,0 +1,44 @@
+//
+//  SignUpCoordinator.swift
+//  ECommerceApp
+//
+//  Created by mac on 29/09/2025.
+//
+
+import UIKit
+
+// MARK: - SignUpCoordinator
+class SignUpCoordinator: Coordinator {
+    
+    var navigationController: UINavigationController
+    var childCoordinators: [Coordinator] = []
+    weak var parentCoordinator: Coordinator?
+    
+    init(navigationController: UINavigationController, parentCoordinator: Coordinator? = nil) {
+        self.navigationController = navigationController
+        self.parentCoordinator = parentCoordinator
+    }
+    
+    func start() {
+        parentCoordinator?.addChildCoordinator(self)
+        
+        guard let signUpVC = makeSignUpViewController() else { return }
+        navigationController.pushViewController(signUpVC, animated: true)
+    }
+    
+    private func makeSignUpViewController() -> SignUpViewController? {
+        let storyboard = UIStoryboard(name: SignUpConstants.StoryboardConstants.name, bundle: nil)
+        guard let signUpVC = storyboard.instantiateViewController(
+            withIdentifier: SignUpConstants.StoryboardConstants.viewControllerID
+        ) as? SignUpViewController else { return nil }
+        
+        signUpVC.viewModel = SignUpDIContainer.shared.getSignUpViewModel(coordinator: self)
+        return signUpVC
+    }
+    
+    // MARK: - Navigation
+    func navigateToLogin() {
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController, parentCoordinator: parentCoordinator)
+        loginCoordinator.start()
+    }
+}

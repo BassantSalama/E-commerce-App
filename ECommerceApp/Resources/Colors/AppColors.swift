@@ -9,6 +9,19 @@
 import UIKit
 
 struct AppColors {
-    static let primary   = UIColor(named: "PrimaryColor")!
-    static let secondary = UIColor(named: "SecondaryColor")!
+    static let primary: UIColor = {
+        guard let color = UIColor(named: "PrimaryColor") else {
+            assertionFailure("⚠️ PrimaryColor not found in Assets!")
+            return .systemBlue
+        }
+        return color
+    }()
+    
+    static let secondary: UIColor = {
+        guard let color = UIColor(named: "SecondaryColor") else {
+            assertionFailure("⚠️ SecondaryColor not found in Assets!")
+            return .systemGray
+        }
+        return color
+    }()
 }

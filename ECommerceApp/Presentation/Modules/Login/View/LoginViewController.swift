@@ -24,9 +24,12 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func logInInButtonTapped(_ sender: Any) {
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        viewModel.login(email: email, password: password)
+        let userInformation = getUserInformation()
+        viewModel.login(userInformation)
+    }
+    
+    @IBAction func doNotHaveAccountTapped(_ sender: Any) {
+        viewModel.didTapDoNotHaveAccount()
     }
 }
 
@@ -65,10 +68,19 @@ private extension LoginViewController {
         viewModel.loginFailure
             .receive(on: DispatchQueue.main)
             .sink { [weak self] error in
-                let alert = UIAlertController(title: "Login Error", message: error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                self?.present(alert, animated: true)
+                self?.showAlert(
+                    title: LoginConstants.Alerts.errorTitle,
+                    message: error,
+                    actionTitle: LoginConstants.Alerts.okAction
+                )
             }
             .store(in: &cancellables)
+    }
+    
+    func getUserInformation() -> LoginModel {
+        return LoginModel(
+            email: emailTextField.text ?? "",
+            password: passwordTextField.text ?? ""
+        )
     }
 }
