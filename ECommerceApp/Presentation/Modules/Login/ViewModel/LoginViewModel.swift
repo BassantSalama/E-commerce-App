@@ -25,18 +25,19 @@ class LoginViewModel {
     }
     
     // MARK: - Login
-    func login(email: String, password: String) {
+    func login(_ input: LoginModel) {
         do {
-            try validateInput(email: email, password: password)
-            executeLogin(email: email, password: password)
+            try validateInput(input)
+            executeLogin(email: input.email, password: input.password)
         } catch {
             loginFailure.send(error.localizedDescription)
         }
     }
     
+    
     // MARK: - Input Validation
-    private func validateInput(email: String, password: String) throws {
-        try LoginValidator.validate(email: email, password: password)
+    private func validateInput(_ input: LoginModel) throws {
+        try LoginValidator.validate(email: input.email, password: input.password)
     }
     
     // MARK: - Use Case Execution

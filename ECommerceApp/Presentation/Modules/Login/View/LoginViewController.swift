@@ -24,9 +24,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func logInInButtonTapped(_ sender: Any) {
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        viewModel.login(email: email, password: password)
+        let userInformation = getUserInformation()
+        viewModel.login(userInformation)
     }
     
     @IBAction func doNotHaveAccountTapped(_ sender: Any) {
@@ -76,5 +75,12 @@ private extension LoginViewController {
                 )
             }
             .store(in: &cancellables)
+    }
+    
+    func getUserInformation() -> LoginModel {
+        return LoginModel(
+            email: emailTextField.text ?? "",
+            password: passwordTextField.text ?? ""
+        )
     }
 }
