@@ -19,9 +19,6 @@ Pods/
 # Carthage (if used)
 Carthage/Build/
 
-# Firebase (Secrets)
-GoogleService-Info.plist
-
 # User settings
 *.swp
 *.lock
