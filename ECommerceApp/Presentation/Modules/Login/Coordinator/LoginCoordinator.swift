@@ -27,9 +27,9 @@ class LoginCoordinator: Coordinator {
     }
     
     private func makeLoginViewController() -> LoginViewController? {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let storyboard = UIStoryboard(name: LoginConstants.StoryboardConstants.name, bundle: nil)
         guard let loginVC = storyboard.instantiateViewController(
-            withIdentifier: "LoginViewController"
+            withIdentifier: LoginConstants.StoryboardConstants.viewControllerID
         ) as? LoginViewController else { return nil }
         
         loginVC.viewModel = LoginDIContainer.shared.getLoginViewModel(coordinator: self)

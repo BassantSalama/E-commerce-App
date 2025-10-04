@@ -8,6 +8,12 @@
 import Foundation
 
 enum LoginConstants {
+    
+    enum StoryboardConstants {
+        static let name = "Login"
+        static let viewControllerID = "LoginViewController"
+    }
+    
     enum Regex {
         static let email = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
         static let password = "^(?=.*[A-Z])(?=.*[0-9]).{6,}$"
