@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SignUpRequest {
+struct SignUpModel {
     let email: String
     let password: String
     let confirmPassword: String

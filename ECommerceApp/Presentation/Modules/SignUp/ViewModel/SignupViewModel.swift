@@ -25,7 +25,7 @@ class SignUpViewModel {
     }
     
     // MARK: - SignUp
-    func signUp(_ request: SignUpRequest) {
+    func signUp(_ request: SignUpModel) {
         do {
             try validateInput(request)
             executeSignUp(email: request.email, password: request.password)
@@ -35,7 +35,7 @@ class SignUpViewModel {
     }
     
     // MARK: - Input Validation
-    private func validateInput(_ request: SignUpRequest) throws {
+    private func validateInput(_ request: SignUpModel) throws {
         guard request.password == request.confirmPassword else {
             throw NSError(
                 domain: "",

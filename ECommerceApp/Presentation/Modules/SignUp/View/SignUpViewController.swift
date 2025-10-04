@@ -31,12 +31,8 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
         
-        let request = SignUpRequest(
-            email: emailTextField.text ?? "",
-            password: passwordTextField.text ?? "",
-            confirmPassword: confirmPasswordTextField.text ?? ""
-        )
-        viewModel.signUp(request)
+        let userInformation = getUserInformation()
+        viewModel.signUp(userInformation)
     }
     
     @IBAction func haveAccountTapped(_ sender: Any) {
@@ -103,5 +99,13 @@ private extension SignUpViewController {
                 )
             }
             .store(in: &cancellables)
+    }
+    
+    func getUserInformation() -> SignUpModel {
+        return SignUpModel(
+            email: emailTextField.text ?? "",
+            password: passwordTextField.text ?? "",
+            confirmPassword: confirmPasswordTextField.text ?? ""
+        )
     }
 }
