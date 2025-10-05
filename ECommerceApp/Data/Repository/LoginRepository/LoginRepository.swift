@@ -9,10 +9,12 @@ import Combine
 import FirebaseAuth
 import FirebaseFirestore
 
+// MARK: - Protocol
 protocol LoginRepositoryProtocol {
     func login(email: String, password: String) -> AnyPublisher<Void, Error>
 }
 
+// MARK: - Implementation
 class LoginRepository: LoginRepositoryProtocol {
     
     func login(email: String, password: String) -> AnyPublisher<Void, Error> {

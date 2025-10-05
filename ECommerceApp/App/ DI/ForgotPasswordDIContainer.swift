@@ -13,8 +13,19 @@ class ForgotPasswordDIContainer {
     
     // MARK: - ViewModel
     func getForgotPasswordViewModel(coordinator: ForgotPasswordCoordinator) -> ForgotPasswordViewModel {
-        return ForgotPasswordViewModel(coordinator: coordinator)
+        let useCase = getForgotPasswordUseCase()
+        return ForgotPasswordViewModel(coordinator: coordinator, useCase: useCase)
     }
     
-  
+    // MARK: - UseCase
+    private func getForgotPasswordUseCase() -> ForgotPasswordUseCaseProtocol {
+        let repository = getForgotPasswordRepository()
+        return ForgotPasswordUseCase(repository: repository)
+    }
+    
+    // MARK: - Repository
+    private func getForgotPasswordRepository() -> ForgotPasswordRepositoryProtocol {
+        return ForgotPasswordRepository()
+    }
 }
+
