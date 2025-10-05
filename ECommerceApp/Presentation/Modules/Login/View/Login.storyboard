@@ -102,6 +102,9 @@
                                                         <color key="tintColor" name="PrimaryColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                                        <connections>
+                                                            <action selector="forgotPasswordTapped:" destination="U97-wV-iQ8" eventType="touchUpInside" id="6YX-wd-2l8"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKm-Zi-rQk">
                                                         <rect key="frame" x="46.666666666666671" y="112.33333333333336" width="239.66666666666663" height="34.333333333333329"/>
