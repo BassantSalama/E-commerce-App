@@ -49,7 +49,7 @@ class ForgotPasswordViewModel {
     }
     
     // MARK: - Navigation
-    func didTappedBacktoLogin() {
+    func didTappedBackToLogin() {
         coordinator?.navigateToLogin()
     }
 }

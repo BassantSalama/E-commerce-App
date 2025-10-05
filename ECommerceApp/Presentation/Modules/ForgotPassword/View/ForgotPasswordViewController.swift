@@ -28,7 +28,7 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func backToLoginTapped(_ sender: Any) {
-        viewModel.didTappedBacktoLogin()
+        viewModel.didTappedBackToLogin()
     }
     
     @IBAction func sendResetLLinkTapped(_ sender: Any) {
