@@ -8,13 +8,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     var viewModel: HomeViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureNavigationBar()
+    }
+    
+    func configureNavigationBar() {
+        navigationController?.navigationBar.tintColor = AppColors.primary
     }
     
 }
