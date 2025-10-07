@@ -48,5 +48,11 @@ class LoginCoordinator: Coordinator {
         addChildCoordinator(forgotPasswordCoordinator)
         forgotPasswordCoordinator.start() }
     
+    func navigateToHome() {
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController, parentCoordinator: self)
+        addChildCoordinator(homeCoordinator)
+        homeCoordinator.start()
+    }
+
 }
 

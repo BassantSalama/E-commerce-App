@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class HomeDIContainer {
+    
+    static let shared = HomeDIContainer()
+    private init() {}
+    
+    // MARK: - GetViewModel
+    
+    func getHomeViewModel(coordinator: HomeCoordinator) -> HomeViewModel {
+        return HomeViewModel(coordinator: coordinator)
+    }
+}

@@ -9,5 +9,9 @@ import Foundation
 
 enum HomeConstants {
     
-    
+    enum StoryboardConstants {
+        
+        static let name = "Home"
+        static let viewControllerID = "HomeViewController"
+    }
 }
