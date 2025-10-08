@@ -429,10 +429,26 @@
 		048EB4F22E95C2D700CAF817 /*  TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				048EB4F32E95C39600CAF817 /* TabBarCoordinator.swift */,
-				048EB4F52E95E25600CAF817 /* MainTabBarController.swift */,
+				048EB4F72E961DC300CAF817 /* Coordinator */,
+				048EB4F82E961DD400CAF817 /* View */,
 			);
 			path = " TabBar";
+			sourceTree = "<group>";
+		};
+		048EB4F72E961DC300CAF817 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				048EB4F32E95C39600CAF817 /* TabBarCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		048EB4F82E961DD400CAF817 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				048EB4F52E95E25600CAF817 /* MainTabBarController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0495647B2E7FCA6F00BD9352 = {
