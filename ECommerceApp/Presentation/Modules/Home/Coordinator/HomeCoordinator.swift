@@ -22,7 +22,7 @@ class HomeCoordinator : Coordinator {
         parentCoordinator?.addChildCoordinator(self)
         
         guard let homeVC = makeHomeViewController() else { return }
-        navigationController.pushViewController(homeVC, animated: true)
+        navigationController.pushViewController(homeVC, animated: false)
         
     }
     

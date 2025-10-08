@@ -53,6 +53,8 @@
 		04727D192E844B2900AD543C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04727D182E844B2900AD543C /* FirebaseStorage */; };
 		048224DB2E825D2300BD801F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224DA2E825D2300BD801F /* Coordinator.swift */; };
 		048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */; };
+		048EB4F42E95C39600CAF817 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EB4F32E95C39600CAF817 /* TabBarCoordinator.swift */; };
+		048EB4F62E95E25600CAF817 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EB4F52E95E25600CAF817 /* MainTabBarController.swift */; };
 		049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564872E7FCA6F00BD9352 /* AppDelegate.swift */; };
 		0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564892E7FCA6F00BD9352 /* SceneDelegate.swift */; };
 		049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049564902E7FCA7100BD9352 /* Assets.xcassets */; };
@@ -121,6 +123,8 @@
 		04727D0B2E84380C00AD543C /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		048224DA2E825D2300BD801F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		048EB4F32E95C39600CAF817 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		048EB4F52E95E25600CAF817 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		049564842E7FCA6F00BD9352 /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049564872E7FCA6F00BD9352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049564892E7FCA6F00BD9352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -422,6 +426,15 @@
 			path = " DI";
 			sourceTree = "<group>";
 		};
+		048EB4F22E95C2D700CAF817 /*  TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				048EB4F32E95C39600CAF817 /* TabBarCoordinator.swift */,
+				048EB4F52E95E25600CAF817 /* MainTabBarController.swift */,
+			);
+			path = " TabBar";
+			sourceTree = "<group>";
+		};
 		0495647B2E7FCA6F00BD9352 = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +549,7 @@
 		049564CA2E801E0800BD9352 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				048EB4F22E95C2D700CAF817 /*  TabBar */,
 				043243292E934F2600C38A3B /* Home */,
 				04119EF72E9174A100660FA9 /* ForgotPassword */,
 				04FD423D2E8AF1F800453598 /* SignUp */,
@@ -757,6 +771,7 @@
 				044D83BF2E8121BF0073CBC9 /* CustomTextField.swift in Sources */,
 				043243392E93502200C38A3B /* HomeRepository.swift in Sources */,
 				04119F042E91766300660FA9 /* ForgotPasswordDIContainer.swift in Sources */,
+				048EB4F42E95C39600CAF817 /* TabBarCoordinator.swift in Sources */,
 				041C10D92E831D9E0069AAB8 /* CustomButton.swift in Sources */,
 				049564BE2E7FFEF600BD9352 /* APIEndpointConfig .swift in Sources */,
 				049564BC2E7FFEDE00BD9352 /* APIRequest.swift in Sources */,
@@ -775,6 +790,7 @@
 				04119F0C2E9178D400660FA9 /* ForgotPasswordUseCase.swift in Sources */,
 				0432433D2E93505500C38A3B /* HomeUseCaseProtocol.swift in Sources */,
 				04119EED2E9018D600660FA9 /* SignUpConstants.swift in Sources */,
+				048EB4F62E95E25600CAF817 /* MainTabBarController.swift in Sources */,
 				04119EF62E91684700660FA9 /* LoginModel.swift in Sources */,
 				04FD424A2E8AF3E600453598 /* SignUpCoordinator.swift in Sources */,
 				04BA90532E8743D800B095CD /* SignUpValidator.swift in Sources */,

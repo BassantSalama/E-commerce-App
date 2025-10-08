@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Combine
 
-// MARK: - LoginCoordinator
 class LoginCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     weak var parentCoordinator: Coordinator?
+    var loginSuccessPublisher = PassthroughSubject<Void, Never>()
+    private var cancellables = Set<AnyCancellable>()
     
     init(navigationController: UINavigationController, parentCoordinator: Coordinator? = nil) {
         self.navigationController = navigationController
@@ -20,9 +22,14 @@ class LoginCoordinator: Coordinator {
     }
     
     func start() {
-        parentCoordinator?.addChildCoordinator(self)
-        
         guard let loginVC = makeLoginViewController() else { return }
+        
+        loginVC.viewModel.loginSuccess
+            .sink { [weak self] in
+                self?.loginSuccessPublisher.send()
+            }
+            .store(in: &cancellables)
+        
         navigationController.pushViewController(loginVC, animated: true)
     }
     
@@ -36,23 +43,22 @@ class LoginCoordinator: Coordinator {
         return loginVC
     }
     
-    // MARK: - Navigation
     func navigateToSignUp() {
-        let signUpCoordinator = SignUpCoordinator(navigationController: navigationController,parentCoordinator: self)
+        let signUpCoordinator = SignUpCoordinator(
+            navigationController: navigationController,
+            parentCoordinator: self
+        )
         addChildCoordinator(signUpCoordinator)
         signUpCoordinator.start()
     }
     
     func navigateToForgotPassword() {
-        let forgotPasswordCoordinator = ForgotPasswordCoordinator( navigationController: navigationController,parentCoordinator: self )
+        let forgotPasswordCoordinator = ForgotPasswordCoordinator(
+            navigationController: navigationController,
+            parentCoordinator: self
+        )
         addChildCoordinator(forgotPasswordCoordinator)
-        forgotPasswordCoordinator.start() }
-    
-    func navigateToHome() {
-        let homeCoordinator = HomeCoordinator(navigationController: navigationController, parentCoordinator: self)
-        addChildCoordinator(homeCoordinator)
-        homeCoordinator.start()
+        forgotPasswordCoordinator.start()
     }
 
 }
-
