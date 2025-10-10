@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040EE7822E972F1900DDFA82 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE7812E972F1900DDFA82 /* CustomNavigationBar.swift */; };
 		04119EED2E9018D600660FA9 /* SignUpConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04119EEC2E9018D600660FA9 /* SignUpConstants.swift */; };
 		04119EF12E901B5900660FA9 /* LoginConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04119EF02E901B5900660FA9 /* LoginConstants.swift */; };
 		04119EF42E901B9300660FA9 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04119EF32E901B9300660FA9 /* LoginValidator.swift */; };
@@ -55,6 +56,7 @@
 		048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */; };
 		048EB4F42E95C39600CAF817 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EB4F32E95C39600CAF817 /* TabBarCoordinator.swift */; };
 		048EB4F62E95E25600CAF817 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EB4F52E95E25600CAF817 /* MainTabBarController.swift */; };
+		048EB4FE2E96215F00CAF817 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EB4FD2E96215F00CAF817 /* SegmentedControlView.swift */; };
 		049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564872E7FCA6F00BD9352 /* AppDelegate.swift */; };
 		0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564892E7FCA6F00BD9352 /* SceneDelegate.swift */; };
 		049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049564902E7FCA7100BD9352 /* Assets.xcassets */; };
@@ -82,6 +84,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040EE7812E972F1900DDFA82 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		04119EEC2E9018D600660FA9 /* SignUpConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConstants.swift; sourceTree = "<group>"; };
 		04119EF02E901B5900660FA9 /* LoginConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConstants.swift; sourceTree = "<group>"; };
 		04119EF32E901B9300660FA9 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 		048224DC2E825D4F00BD801F /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		048EB4F32E95C39600CAF817 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		048EB4F52E95E25600CAF817 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		048EB4FD2E96215F00CAF817 /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		049564842E7FCA6F00BD9352 /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049564872E7FCA6F00BD9352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049564892E7FCA6F00BD9352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 		044D83BC2E8121960073CBC9 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				048EB4FA2E96210F00CAF817 /* SegmentedControlView */,
+				048EB4F92E9620A800CAF817 /* NavigationBar */,
 				041C10D72E831D850069AAB8 /* Buttons */,
 				044D83BD2E8121A00073CBC9 /* TextFields */,
 			);
@@ -449,6 +455,22 @@
 				048EB4F52E95E25600CAF817 /* MainTabBarController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		048EB4F92E9620A800CAF817 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				040EE7812E972F1900DDFA82 /* CustomNavigationBar.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		048EB4FA2E96210F00CAF817 /* SegmentedControlView */ = {
+			isa = PBXGroup;
+			children = (
+				048EB4FD2E96215F00CAF817 /* SegmentedControlView.swift */,
+			);
+			path = SegmentedControlView;
 			sourceTree = "<group>";
 		};
 		0495647B2E7FCA6F00BD9352 = {
@@ -778,6 +800,7 @@
 				04119EFE2E9175EC00660FA9 /* ForgotPasswordViewController.swift in Sources */,
 				04FD42422E8AF30100453598 /* SignUpDIContainer.swift in Sources */,
 				04FD424F2E8AFCE900453598 /* SignUpUseCase.swift in Sources */,
+				048EB4FE2E96215F00CAF817 /* SegmentedControlView.swift in Sources */,
 				0495648A2E7FCA6F00BD9352 /* SceneDelegate.swift in Sources */,
 				043243412E9350A300C38A3B /* HomeConstants.swift in Sources */,
 				043243352E934FDF00C38A3B /* HomeDIContainer.swift in Sources */,
@@ -807,6 +830,7 @@
 				0432433D2E93505500C38A3B /* HomeUseCaseProtocol.swift in Sources */,
 				04119EED2E9018D600660FA9 /* SignUpConstants.swift in Sources */,
 				048EB4F62E95E25600CAF817 /* MainTabBarController.swift in Sources */,
+				040EE7822E972F1900DDFA82 /* CustomNavigationBar.swift in Sources */,
 				04119EF62E91684700660FA9 /* LoginModel.swift in Sources */,
 				04FD424A2E8AF3E600453598 /* SignUpCoordinator.swift in Sources */,
 				04BA90532E8743D800B095CD /* SignUpValidator.swift in Sources */,

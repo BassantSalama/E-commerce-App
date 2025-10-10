@@ -36,4 +36,13 @@ class HomeCoordinator : Coordinator {
         
         return homeVC
     }
+    
+    func showHomeScreen() {
+        print("Navigating to Home Screen")
+    }
+    
+    
+    func showCategoryScreen() {
+        print("Navigating to Category Screen")}
+    
 }
