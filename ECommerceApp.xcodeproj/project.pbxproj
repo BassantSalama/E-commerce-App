@@ -203,6 +203,14 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
+		040EE7912E99FDAC00DDFA82 /* SectionHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				040EE78D2E999F4200DDFA82 /* SectionHeaderView.swift */,
+			);
+			path = SectionHeaderView;
+			sourceTree = "<group>";
+		};
 		04119EEB2E9018C300660FA9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,7 +339,6 @@
 				040EE7832E998A4000DDFA82 /* Cells */,
 				0432432C2E934F5500C38A3B /* HomeViewController.swift */,
 				0432432E2E934F6800C38A3B /* Home.storyboard */,
-				040EE78D2E999F4200DDFA82 /* SectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -417,6 +424,7 @@
 		044D83BC2E8121960073CBC9 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				040EE7912E99FDAC00DDFA82 /* SectionHeaderView */,
 				048EB4FA2E96210F00CAF817 /* SegmentedControlView */,
 				048EB4F92E9620A800CAF817 /* NavigationBar */,
 				041C10D72E831D850069AAB8 /* Buttons */,
