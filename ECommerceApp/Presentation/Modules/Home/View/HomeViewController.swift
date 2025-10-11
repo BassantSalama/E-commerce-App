@@ -16,27 +16,102 @@ class HomeViewController: UIViewController {
     
     private let customNavBar = CustomNavigationBar()
     private let segmentedControl = SegmentedControlView()
+    @IBOutlet weak var homeCollectionView: UICollectionView!
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewAppearance()
-        configureSubviews()
-        
+        setupView()
     }
+}
+
+// MARK: - Setup
+private extension HomeViewController {
     
-    private func configureViewAppearance() {
+    func setupView() {
+        configureAppearance()
+        setupLayout()
+        reloadData()
+    }
+}
+
+// MARK: - Appearance
+private extension HomeViewController {
+    
+    func configureAppearance() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.isHidden = true
-    }
-    
-    private func configureSubviews() {
         setupCustomNavBar()
         setupSegmentedControl()
+        setupCollectionView()
+    }
+}
+
+// MARK: - Layout
+private extension HomeViewController {
+    
+    func setupLayout() {
+        setupCollectionViewConstraints()
+    }
+}
+
+// MARK: - Data
+private extension HomeViewController {
+    
+    func reloadData() {
+        homeCollectionView.reloadData()
+    }
+}
+
+// MARK: - Collection View Setup
+private extension HomeViewController {
+    
+    func setupCollectionView() {
+        configureCollectionViewDelegates()
+        registerCollectionViewCells()
+        registerCollectionViewHeader()
+        applyCollectionViewLayout()
     }
     
+    func configureCollectionViewDelegates() {
+        homeCollectionView.dataSource = self
+        homeCollectionView.delegate = self
+    }
     
-    private func setupCustomNavBar() {
+    func registerCollectionViewCells() {
+        homeCollectionView.register(BannerCell.self,
+                                    forCellWithReuseIdentifier: BannerCell.identifier)
+        homeCollectionView.register(ProductCell.self,
+                                    forCellWithReuseIdentifier: ProductCell.identifier)
+    }
+    
+    func  registerCollectionViewHeader() {
+        homeCollectionView.register(SectionHeaderView.self,
+                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                    withReuseIdentifier: SectionHeaderView.identifier)
+    }
+    
+    func applyCollectionViewLayout() {
+        homeCollectionView.collectionViewLayout = HomeLayoutBuilder.createLayout()
+    }
+    
+    func setupCollectionViewConstraints() {
+        homeCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            homeCollectionView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 20),
+            homeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            homeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            homeCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+}
+
+// MARK: - Custom NavBar & Segmented Control
+private extension HomeViewController {
+    
+    func setupCustomNavBar() {
         view.addSubview(customNavBar)
         customNavBar.translatesAutoresizingMaskIntoConstraints = false
         
@@ -50,7 +125,7 @@ class HomeViewController: UIViewController {
         customNavBar.setSearchAction(target: self, action: #selector(didTapSearch))
     }
     
-    private func setupSegmentedControl() {
+    func setupSegmentedControl() {
         view.addSubview(segmentedControl)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
@@ -61,8 +136,85 @@ class HomeViewController: UIViewController {
             segmentedControl.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
+}
+
+// MARK: - Actions
+private extension HomeViewController {
     
-    @objc private func didTapSearch() {
+    @objc func didTapSearch() {
         print("Search icon tapped")
+    }
+}
+
+// MARK: - UICollectionViewDataSource & UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        section == 0 ? viewModel.banners.count : viewModel.products.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        sectionCell(for: indexPath, in: collectionView)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionHeader else {
+            return UICollectionReusableView()
+        }
+        return headerView(for: indexPath, in: collectionView)
+    }
+}
+
+// MARK: - CollectionView Helpers
+private extension HomeViewController {
+    
+    func sectionCell(for indexPath: IndexPath, in collectionView: UICollectionView) -> UICollectionViewCell {
+        indexPath.section == 0
+        ? configureBannerCell(in: collectionView, at: indexPath)
+        : configureProductCell(in: collectionView, at: indexPath)
+    }
+    
+    func configureBannerCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: BannerCell.identifier,
+            for: indexPath
+        ) as! BannerCell
+        cell.configure(with: viewModel.banners)
+        return cell
+    }
+    
+    func configureProductCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ProductCell.identifier,
+            for: indexPath
+        ) as! ProductCell
+        cell.configure(with: viewModel.products[indexPath.item])
+        return cell
+    }
+    
+    func headerView(for indexPath: IndexPath, in collectionView: UICollectionView) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: SectionHeaderView.identifier,
+            for: indexPath
+        ) as! SectionHeaderView
+        
+        configureHeader(header, forSection: indexPath.section)
+        return header
+    }
+    
+    func configureHeader(_ header: SectionHeaderView, forSection section: Int) {
+        if section == 1 {
+            header.configure(with: HomeConstants.SectionTitles.newArrivals) {
+                print("See All tapped for New Arrivals")
+            }
+        }
     }
 }

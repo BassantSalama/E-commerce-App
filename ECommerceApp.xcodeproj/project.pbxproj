@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		040EE7822E972F1900DDFA82 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE7812E972F1900DDFA82 /* CustomNavigationBar.swift */; };
+		040EE7852E998C6D00DDFA82 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE7842E998C6D00DDFA82 /* ProductCell.swift */; };
+		040EE7872E998C9300DDFA82 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE7862E998C9300DDFA82 /* BannerCell.swift */; };
+		040EE7892E998E0500DDFA82 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE7882E998E0400DDFA82 /* Product.swift */; };
+		040EE78C2E999D4600DDFA82 /* HomeLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE78B2E999D4600DDFA82 /* HomeLayoutBuilder.swift */; };
+		040EE78E2E999F4200DDFA82 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE78D2E999F4200DDFA82 /* SectionHeaderView.swift */; };
+		040EE7902E99BE9300DDFA82 /* BannerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE78F2E99BE9300DDFA82 /* BannerImageCell.swift */; };
 		04119EED2E9018D600660FA9 /* SignUpConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04119EEC2E9018D600660FA9 /* SignUpConstants.swift */; };
 		04119EF12E901B5900660FA9 /* LoginConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04119EF02E901B5900660FA9 /* LoginConstants.swift */; };
 		04119EF42E901B9300660FA9 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04119EF32E901B9300660FA9 /* LoginValidator.swift */; };
@@ -85,6 +91,12 @@
 
 /* Begin PBXFileReference section */
 		040EE7812E972F1900DDFA82 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		040EE7842E998C6D00DDFA82 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		040EE7862E998C9300DDFA82 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		040EE7882E998E0400DDFA82 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		040EE78B2E999D4600DDFA82 /* HomeLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayoutBuilder.swift; sourceTree = "<group>"; };
+		040EE78D2E999F4200DDFA82 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		040EE78F2E99BE9300DDFA82 /* BannerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCell.swift; sourceTree = "<group>"; };
 		04119EEC2E9018D600660FA9 /* SignUpConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConstants.swift; sourceTree = "<group>"; };
 		04119EF02E901B5900660FA9 /* LoginConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConstants.swift; sourceTree = "<group>"; };
 		04119EF32E901B9300660FA9 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
@@ -173,6 +185,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040EE7832E998A4000DDFA82 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				040EE7842E998C6D00DDFA82 /* ProductCell.swift */,
+				040EE7862E998C9300DDFA82 /* BannerCell.swift */,
+				040EE78F2E99BE9300DDFA82 /* BannerImageCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		040EE78A2E999D2C00DDFA82 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				040EE78B2E999D4600DDFA82 /* HomeLayoutBuilder.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		04119EEB2E9018C300660FA9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +308,7 @@
 		043243292E934F2600C38A3B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				040EE78A2E999D2C00DDFA82 /* Layout */,
 				043243332E934FB300C38A3B /* Coordinator */,
 				043243322E934FAB00C38A3B /* Constants */,
 				0432432B2E934F3D00C38A3B /* View */,
@@ -297,8 +328,10 @@
 		0432432B2E934F3D00C38A3B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				040EE7832E998A4000DDFA82 /* Cells */,
 				0432432C2E934F5500C38A3B /* HomeViewController.swift */,
 				0432432E2E934F6800C38A3B /* Home.storyboard */,
+				040EE78D2E999F4200DDFA82 /* SectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,6 +375,7 @@
 				043E5B902E8E97D600BC9168 /* SignUpModel.swift */,
 				04119EF52E91684700660FA9 /* LoginModel.swift */,
 				0443DA792E91EE53004203CA /* ForgotPasswordModel .swift */,
+				040EE7882E998E0400DDFA82 /* Product.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -779,11 +813,13 @@
 				04119F072E9177E500660FA9 /* ForgotPasswordRepository.swift in Sources */,
 				04119F0A2E9178B900660FA9 /* ForgotPasswordUseCaseProtocol.swift in Sources */,
 				04727CFF2E840A5200AD543C /* LoginViewModel.swift in Sources */,
+				040EE78C2E999D4600DDFA82 /* HomeLayoutBuilder.swift in Sources */,
 				043E5B912E8E97D600BC9168 /* SignUpModel.swift in Sources */,
 				0432433F2E93508A00C38A3B /* HomeCoordinator.swift in Sources */,
 				041C10CE2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift in Sources */,
 				048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */,
 				04727D0C2E84380C00AD543C /* LoginUseCase.swift in Sources */,
+				040EE7892E998E0500DDFA82 /* Product.swift in Sources */,
 				0443DA752E91C8FF004203CA /* ForgotPasswordConstants.swift in Sources */,
 				049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */,
 				04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */,
@@ -810,12 +846,15 @@
 				044D83BF2E8121BF0073CBC9 /* CustomTextField.swift in Sources */,
 				043243392E93502200C38A3B /* HomeRepository.swift in Sources */,
 				04119F042E91766300660FA9 /* ForgotPasswordDIContainer.swift in Sources */,
+				040EE7872E998C9300DDFA82 /* BannerCell.swift in Sources */,
 				048EB4F42E95C39600CAF817 /* TabBarCoordinator.swift in Sources */,
 				041C10D92E831D9E0069AAB8 /* CustomButton.swift in Sources */,
 				049564BE2E7FFEF600BD9352 /* APIEndpointConfig .swift in Sources */,
 				049564BC2E7FFEDE00BD9352 /* APIRequest.swift in Sources */,
 				048224DB2E825D2300BD801F /* Coordinator.swift in Sources */,
 				04A4B8D42E89C1A200E9DACC /* LoginRepository.swift in Sources */,
+				040EE7852E998C6D00DDFA82 /* ProductCell.swift in Sources */,
+				040EE7902E99BE9300DDFA82 /* BannerImageCell.swift in Sources */,
 				043243312E934F9B00C38A3B /* HomeViewModel.swift in Sources */,
 				04727D0A2E8437D300AD543C /* LoginUseCaseProtocol.swift in Sources */,
 				049564C42E7FFF4700BD9352 /* NetworkManager.swift in Sources */,
@@ -826,6 +865,7 @@
 				044D83C32E812C050073CBC9 /* LoginViewController.swift in Sources */,
 				04FD42512E8AFD1C00453598 /* SignUpUseCaseProtocol.swift in Sources */,
 				04119EF12E901B5900660FA9 /* LoginConstants.swift in Sources */,
+				040EE78E2E999F4200DDFA82 /* SectionHeaderView.swift in Sources */,
 				04119F0C2E9178D400660FA9 /* ForgotPasswordUseCase.swift in Sources */,
 				0432433D2E93505500C38A3B /* HomeUseCaseProtocol.swift in Sources */,
 				04119EED2E9018D600660FA9 /* SignUpConstants.swift in Sources */,

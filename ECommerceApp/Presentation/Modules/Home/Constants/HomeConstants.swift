@@ -14,4 +14,13 @@ enum HomeConstants {
         static let name = "Home"
         static let viewControllerID = "HomeViewController"
     }
+    
+    enum SectionTitles {
+        static let newArrivals = "New Arrivals"
+    }
+    
+    enum ButtonTitles {
+        static let seeAll = "See All"
+    }
+    
 }
