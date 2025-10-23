@@ -12,9 +12,19 @@ class HomeDIContainer {
     static let shared = HomeDIContainer()
     private init() {}
     
-    // MARK: - GetViewModel
+    // MARK: - Repository
+    func getHomeRepository() -> HomeRepositoryProtocol {
+        HomeRepository(network: NetworkManager.shared)
+    }
     
+    // MARK: - UseCase
+    func getHomeUseCase() -> HomeUseCaseProtocol {
+        HomeUseCase(repository: getHomeRepository())
+    }
+    
+    // MARK: - ViewModel
     func getHomeViewModel(coordinator: HomeCoordinator) -> HomeViewModel {
-        return HomeViewModel(coordinator: coordinator)
+        let useCase = getHomeUseCase()
+        return HomeViewModel(coordinator: coordinator, useCase: useCase)
     }
 }

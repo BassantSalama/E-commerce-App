@@ -8,7 +8,7 @@
 import UIKit
 
 final class BannerImageCell: UICollectionViewCell {
-    static let identifier = "BannerImageCell"
+    static let identifier = HomeConstants.BannerImageCellConstants.identifier
     
     private let imageView = UIImageView()
     
@@ -16,11 +16,12 @@ final class BannerImageCell: UICollectionViewCell {
         super.init(frame: frame)
         setupUI()
     }
-    required init?(coder: NSCoder) { fatalError() }
+    
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     private func setupUI() {
         imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 12
+        imageView.layer.cornerRadius = HomeConstants.BannerImageCellConstants.Layout.cornerRadius
         imageView.clipsToBounds = true
         
         contentView.addSubview(imageView)
@@ -34,7 +35,11 @@ final class BannerImageCell: UICollectionViewCell {
         ])
     }
     
-    func configure(with imageName: String) {
-        imageView.image = UIImage(named: imageName)
+    func configure(with url: URL?) {
+        guard let url = url else {
+            imageView.image = UIImage(named: HomeConstants.BannerImageCellConstants.Images.placeholder)
+            return
+        }
+        imageView.setImage(from: url)
     }
 }

@@ -8,6 +8,11 @@
 import UIKit
 import Combine
 
+enum SectionType: Int, CaseIterable {
+    case banners
+    case products
+}
+
 class HomeViewController: UIViewController {
     
     // MARK: - Properties
@@ -23,6 +28,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        bindViewModel()
+        viewModel.fetchAll()
     }
 }
 
@@ -31,8 +38,7 @@ private extension HomeViewController {
     
     func setupView() {
         configureAppearance()
-        setupLayout()
-        reloadData()
+        setupCollectionViewConstraints()
     }
 }
 
@@ -47,23 +53,6 @@ private extension HomeViewController {
         setupCollectionView()
     }
 }
-
-// MARK: - Layout
-private extension HomeViewController {
-    
-    func setupLayout() {
-        setupCollectionViewConstraints()
-    }
-}
-
-// MARK: - Data
-private extension HomeViewController {
-    
-    func reloadData() {
-        homeCollectionView.reloadData()
-    }
-}
-
 // MARK: - Collection View Setup
 private extension HomeViewController {
     
@@ -80,8 +69,8 @@ private extension HomeViewController {
     }
     
     func registerCollectionViewCells() {
-        homeCollectionView.register(BannerCell.self,
-                                    forCellWithReuseIdentifier: BannerCell.identifier)
+        homeCollectionView.register(BannerCarouselCell.self,
+                                    forCellWithReuseIdentifier: BannerCarouselCell.identifier)
         homeCollectionView.register(ProductCell.self,
                                     forCellWithReuseIdentifier: ProductCell.identifier)
     }
@@ -100,7 +89,7 @@ private extension HomeViewController {
         homeCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            homeCollectionView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 20),
+            homeCollectionView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: HomeConstants.HomeLayoutConstants.collectionViewTopSpacing),
             homeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             homeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             homeCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -119,7 +108,7 @@ private extension HomeViewController {
             customNavBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             customNavBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             customNavBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            customNavBar.heightAnchor.constraint(equalToConstant: 70)
+            customNavBar.heightAnchor.constraint(equalToConstant: HomeConstants.HomeLayoutConstants.customNavBarHeight)
         ])
         
         customNavBar.setSearchAction(target: self, action: #selector(didTapSearch))
@@ -130,10 +119,10 @@ private extension HomeViewController {
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: customNavBar.bottomAnchor, constant: 16),
-            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            segmentedControl.heightAnchor.constraint(equalToConstant: 40)
+            segmentedControl.topAnchor.constraint(equalTo: customNavBar.bottomAnchor, constant:  HomeConstants.HomeLayoutConstants.segmentedControlTopSpacing),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: HomeConstants.HomeLayoutConstants.horizontalPadding),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -HomeConstants.HomeLayoutConstants.horizontalPadding),
+            segmentedControl.heightAnchor.constraint(equalToConstant: HomeConstants.HomeLayoutConstants.segmentedControlHeight)
         ])
     }
 }
@@ -146,15 +135,21 @@ private extension HomeViewController {
     }
 }
 
-// MARK: - UICollectionViewDataSource & UICollectionViewDelegate
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+// MARK: - UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource , UICollectionViewDelegate{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        SectionType.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        section == 0 ? viewModel.banners.count : viewModel.products.count
+        guard let sectionType = SectionType(rawValue: section) else { return 0 }
+        switch sectionType {
+        case .banners:
+            return 1
+        case .products:
+            return viewModel.products.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -176,28 +171,38 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 private extension HomeViewController {
     
     func sectionCell(for indexPath: IndexPath, in collectionView: UICollectionView) -> UICollectionViewCell {
-        indexPath.section == 0
-        ? configureBannerCell(in: collectionView, at: indexPath)
-        : configureProductCell(in: collectionView, at: indexPath)
+        guard let sectionType = SectionType(rawValue: indexPath.section) else {
+            return UICollectionViewCell()
+        }
+        
+        switch sectionType {
+        case .banners:
+            return configureBannerCell(in: collectionView, at: indexPath)
+        case .products:
+            return configureProductCell(in: collectionView, at: indexPath)
+        }
     }
     
     func configureBannerCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: BannerCell.identifier,
-            for: indexPath
-        ) as! BannerCell
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: BannerCarouselCell.identifier,
+            for: indexPath) as? BannerCarouselCell else {
+            return UICollectionViewCell()
+        }
         cell.configure(with: viewModel.banners)
         return cell
     }
     
     func configureProductCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
+        guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: ProductCell.identifier,
-            for: indexPath
-        ) as! ProductCell
+            for: indexPath) as? ProductCell else {
+            return UICollectionViewCell()
+        }
         cell.configure(with: viewModel.products[indexPath.item])
         return cell
     }
+    
     
     func headerView(for indexPath: IndexPath, in collectionView: UICollectionView) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(
@@ -211,10 +216,44 @@ private extension HomeViewController {
     }
     
     func configureHeader(_ header: SectionHeaderView, forSection section: Int) {
-        if section == 1 {
+        guard let sectionType = SectionType(rawValue: section) else { return }
+        switch sectionType {
+        case .products:
             header.configure(with: HomeConstants.SectionTitles.newArrivals) {
                 print("See All tapped for New Arrivals")
             }
+        default:
+            break
         }
     }
+    
+    private func bindViewModel() {
+        viewModel.$banners
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.homeCollectionView.reloadSections([SectionType.banners.rawValue])
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$products
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                self.homeCollectionView.reloadSections([SectionType.products.rawValue])
+            }
+            .store(in: &cancellables)
+    }
 }
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollModel = ScrollEventModel(
+            offsetY: scrollView.contentOffset.y,
+            contentHeight: scrollView.contentSize.height,
+            viewHeight: scrollView.frame.size.height
+        )
+        
+        viewModel.handleScrollEvent(scrollModel)
+    }
+}
+

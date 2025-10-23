@@ -7,35 +7,35 @@
 
 import UIKit
 
-final class BannerCell: UICollectionViewCell {
-    static let identifier = "BannerCell"
+final class BannerCarouselCell: UICollectionViewCell {
+    static let identifier = HomeConstants.BannerCellConstants.identifier
     
     private let bannerCollectionView: UICollectionView
     private let pageControl = UIPageControl()
-    
-    private var banners: [String] = []
+    private var banners: [Banner] = []
     
     override init(frame: CGRect) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         bannerCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
         super.init(frame: frame)
         setupUI()
     }
     
-    required init?(coder: NSCoder) { fatalError() }
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     private func setupUI() {
-        bannerCollectionView.layer.cornerRadius = 12
+        bannerCollectionView.layer.cornerRadius = HomeConstants.BannerCellConstants.Layout.cornerRadius
         bannerCollectionView.clipsToBounds = true
         bannerCollectionView.isPagingEnabled = true
         bannerCollectionView.showsHorizontalScrollIndicator = false
         bannerCollectionView.dataSource = self
         bannerCollectionView.delegate = self
-        bannerCollectionView.register(BannerImageCell.self,
-                                      forCellWithReuseIdentifier: BannerImageCell.identifier)
+        bannerCollectionView.register(
+            BannerImageCell.self,
+            forCellWithReuseIdentifier: BannerImageCell.identifier
+        )
         
         pageControl.currentPage = 0
         pageControl.pageIndicatorTintColor = .lightGray
@@ -48,26 +48,25 @@ final class BannerCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             bannerCollectionView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            bannerCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
-            bannerCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -6),
-            bannerCollectionView.heightAnchor.constraint(equalToConstant: 190),
+            bannerCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: HomeConstants.BannerCellConstants.Layout.horizontalInset),
+            bannerCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -HomeConstants.BannerCellConstants.Layout.horizontalInset),
+            bannerCollectionView.heightAnchor.constraint(equalToConstant: HomeConstants.BannerCellConstants.Layout.bannerHeight),
             
-            pageControl.topAnchor.constraint(equalTo: bannerCollectionView.bottomAnchor, constant: 20),
+            pageControl.topAnchor.constraint(equalTo: bannerCollectionView.bottomAnchor, constant: HomeConstants.BannerCellConstants.Layout.pageControlTopSpacing),
             pageControl.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             pageControl.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
     
-    func configure(with banners: [String]) {
+    func configure(with banners: [Banner]) {
         self.banners = banners
         pageControl.numberOfPages = banners.count
         bannerCollectionView.reloadData()
     }
 }
 
-extension BannerCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+extension BannerCarouselCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         banners.count
     }
     
@@ -77,14 +76,17 @@ extension BannerCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
             withReuseIdentifier: BannerImageCell.identifier,
             for: indexPath
         ) as! BannerImageCell
-        cell.configure(with: banners[indexPath.item])
+        
+        let banner = banners[indexPath.item]
+        cell.configure(with: banner.imageURL)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 190)
+        CGSize(width: collectionView.frame.width,
+               height: HomeConstants.BannerCellConstants.Layout.bannerHeight)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -92,4 +94,3 @@ extension BannerCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
         pageControl.currentPage = page
     }
 }
-
