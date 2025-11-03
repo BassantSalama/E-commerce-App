@@ -33,7 +33,7 @@ enum HomeLayoutBuilder {
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: .init(
                 widthDimension: .fractionalWidth(HomeConstants.LayoutBuilderConstants.BannerSection.groupWidth),
-                heightDimension: .estimated(HomeConstants.LayoutBuilderConstants.BannerSection.groupHeight)
+                heightDimension: .absolute(HomeConstants.LayoutBuilderConstants.BannerSection.groupHeight)
             ),
             subitems: [item]
         )

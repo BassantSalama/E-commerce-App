@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tg3-i5-IuG">
-                                <rect key="frame" x="69" y="248" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tg3-i5-IuG">
+                                <rect key="frame" x="0.0" y="197" width="393" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="axC-mm-z0m">
                                     <size key="itemSize" width="128" height="128"/>
@@ -29,26 +28,54 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iOa-9v-f3E">
-                                        <rect key="frame" x="56" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pn0-x5-32c">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-9A-tns" customClass="CustomNavigationBar" customModule="ECommerceApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="393" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="o7J-GC-c0m"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bzc-7Q-97Z" customClass="SegmentedControlView" customModule="ECommerceApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="137" width="361" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sVA-JJ-IXl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Bzc-7Q-97Z" secondAttribute="trailing" constant="16" id="1yH-Ru-PhK"/>
+                            <constraint firstItem="W2l-9A-tns" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="GNE-4S-tQc"/>
+                            <constraint firstItem="Bzc-7Q-97Z" firstAttribute="top" secondItem="W2l-9A-tns" secondAttribute="bottom" constant="8" id="LFN-w2-0zt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tg3-i5-IuG" secondAttribute="trailing" id="NOD-bd-x2V"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Tg3-i5-IuG" secondAttribute="bottom" id="V6B-YM-tuz"/>
+                            <constraint firstItem="W2l-9A-tns" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="agw-Mj-opI"/>
+                            <constraint firstItem="Tg3-i5-IuG" firstAttribute="top" secondItem="Bzc-7Q-97Z" secondAttribute="bottom" constant="20" id="fl7-7Q-Eqc"/>
+                            <constraint firstItem="Tg3-i5-IuG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rNr-Ii-8mM"/>
+                            <constraint firstItem="Bzc-7Q-97Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="xhF-hH-Tgj"/>
+                            <constraint firstItem="W2l-9A-tns" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="yyp-9d-1dv"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="customNavBar" destination="W2l-9A-tns" id="17U-Eg-Eer"/>
                         <outlet property="homeCollectionView" destination="Tg3-i5-IuG" id="obx-Q0-LoB"/>
+                        <outlet property="segmentedControl" destination="Bzc-7Q-97Z" id="Xc5-21-GfX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="-2"/>
+            <point key="canvasLocation" x="67.938931297709928" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

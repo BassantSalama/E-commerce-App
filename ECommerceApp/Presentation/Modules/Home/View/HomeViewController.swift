@@ -19,10 +19,9 @@ class HomeViewController: UIViewController {
     var viewModel: HomeViewModel!
     private var cancellables = Set<AnyCancellable>()
     
-    private let customNavBar = CustomNavigationBar()
-    private let segmentedControl = SegmentedControlView()
+    @IBOutlet weak var segmentedControl: SegmentedControlView!
+    @IBOutlet weak var customNavBar: CustomNavigationBar!
     @IBOutlet weak var homeCollectionView: UICollectionView!
-    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -38,7 +37,6 @@ private extension HomeViewController {
     
     func setupView() {
         configureAppearance()
-        setupCollectionViewConstraints()
     }
 }
 
@@ -48,8 +46,6 @@ private extension HomeViewController {
     func configureAppearance() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.isHidden = true
-        setupCustomNavBar()
-        setupSegmentedControl()
         setupCollectionView()
     }
 }
@@ -83,47 +79,6 @@ private extension HomeViewController {
     
     func applyCollectionViewLayout() {
         homeCollectionView.collectionViewLayout = HomeLayoutBuilder.createLayout()
-    }
-    
-    func setupCollectionViewConstraints() {
-        homeCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            homeCollectionView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: HomeConstants.HomeLayoutConstants.collectionViewTopSpacing),
-            homeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            homeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            homeCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
-}
-
-// MARK: - Custom NavBar & Segmented Control
-private extension HomeViewController {
-    
-    func setupCustomNavBar() {
-        view.addSubview(customNavBar)
-        customNavBar.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            customNavBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            customNavBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            customNavBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            customNavBar.heightAnchor.constraint(equalToConstant: HomeConstants.HomeLayoutConstants.customNavBarHeight)
-        ])
-        
-        customNavBar.setSearchAction(target: self, action: #selector(didTapSearch))
-    }
-    
-    func setupSegmentedControl() {
-        view.addSubview(segmentedControl)
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: customNavBar.bottomAnchor, constant:  HomeConstants.HomeLayoutConstants.segmentedControlTopSpacing),
-            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: HomeConstants.HomeLayoutConstants.horizontalPadding),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -HomeConstants.HomeLayoutConstants.horizontalPadding),
-            segmentedControl.heightAnchor.constraint(equalToConstant: HomeConstants.HomeLayoutConstants.segmentedControlHeight)
-        ])
     }
 }
 
