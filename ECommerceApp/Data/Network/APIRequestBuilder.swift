@@ -9,44 +9,43 @@ import Foundation
 
 final class APIRequestBuilder {
     private var url: URL
-    private var method: HTTPMethod = .GET
     private var headers: [String: String]?
-    private var parameters: [String: Any]?
-    private var parameterEncoding: ParameterEncoding = .url
+    private var query: String = ""
+    private var variables: [String: Any]?
     
     // Initialize with a base URL
-    public init(url: URL) {
+    init(url: URL) {
         self.url = url
     }
     
-    // Set HTTP method
-    @discardableResult
-    func setMethod(_ method: HTTPMethod) -> Self {
-        self.method = method
-        return self
-    }
-    
-    // Set headers
+    // Set headers (e.g. Shopify Access Token)
     @discardableResult
     func setHeaders(_ headers: [String: String]?) -> Self {
         self.headers = headers
         return self
     }
     
-    // Set parameters and encoding
+    // Set GraphQL query
     @discardableResult
-    func setParameters(_ parameters: [String: Any]?, encoding: ParameterEncoding) -> Self {
-        self.parameters = parameters
-        self.parameterEncoding = encoding
+    func setQuery(_ query: String) -> Self {
+        self.query = query
         return self
     }
     
-    // Build APIRequest
+    // Set GraphQL variables (optional)
+    @discardableResult
+    func setVariables(_ variables: [String: Any]?) -> Self {
+        self.variables = variables
+        return self
+    }
+    
+    // Build final APIRequest
     func build() -> APIRequest {
-        return APIRequest(url: url,
-                          method: method,
-                          headers: headers,
-                          parameters: parameters,
-                          parameterEncoding: parameterEncoding)
+        return APIRequest(
+            url: url,
+            headers: headers,
+            query: query,
+            variables: variables
+        )
     }
 }
