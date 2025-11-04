@@ -67,19 +67,17 @@ enum HomeConstants {
         static let identifier = "BannerCell"
         
         enum Layout {
-            static let cornerRadius: CGFloat = 12
+            static let cornerRadius: CGFloat = 16
             static let horizontalInset: CGFloat = 6
-            static let bannerHeight: CGFloat = 190
-            static let pageControlTopSpacing: CGFloat = 20
+            static let bannerHeight: CGFloat = 200
         }
-        
     }
     
     enum BannerImageCellConstants {
         static let identifier = "BannerImageCell"
         
         enum Layout {
-            static let cornerRadius: CGFloat = 12
+            static let cornerRadius: CGFloat = 16
         }
         
         enum Images {
@@ -97,7 +95,7 @@ enum HomeConstants {
         
         enum BannerSection {
             static let groupWidth: CGFloat = 0.9
-            static let groupHeight: CGFloat = 190
+            static let groupHeight: CGFloat = 200
             static let interGroupSpacing: CGFloat = 8
             
             static let contentTopInset: CGFloat = 8

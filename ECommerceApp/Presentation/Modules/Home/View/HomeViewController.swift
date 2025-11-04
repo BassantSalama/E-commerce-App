@@ -65,8 +65,10 @@ private extension HomeViewController {
     }
     
     func registerCollectionViewCells() {
-        homeCollectionView.register(BannerCarouselCell.self,
-                                    forCellWithReuseIdentifier: BannerCarouselCell.identifier)
+        homeCollectionView.register(
+            UINib(nibName: "BannerCarouselCell", bundle: nil),
+            forCellWithReuseIdentifier: HomeConstants.BannerCellConstants.identifier
+        )
         homeCollectionView.register(ProductCell.self,
                                     forCellWithReuseIdentifier: ProductCell.identifier)
     }
