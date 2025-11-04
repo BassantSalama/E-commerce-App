@@ -45,6 +45,14 @@
 		0443DA7A2E91EE53004203CA /* ForgotPasswordModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443DA792E91EE53004203CA /* ForgotPasswordModel .swift */; };
 		044B2D9F2EBAA8B200676574 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B2D9D2EBAA8B200676574 /* ProductCell.swift */; };
 		044B2DA02EBAA8B200676574 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B2D9E2EBAA8B200676574 /* ProductCell.xib */; };
+		044B2DA82EBAC46B00676574 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044B2DA72EBAC46B00676574 /* Category.storyboard */; };
+		044B2DAB2EBAC49D00676574 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B2DA92EBAC49D00676574 /* CategoryCell.swift */; };
+		044B2DAC2EBAC49D00676574 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B2DAA2EBAC49D00676574 /* CategoryCell.xib */; };
+		044B2DAE2EBAC4B900676574 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B2DAD2EBAC4B900676574 /* CategoryViewController.swift */; };
+		044B2DB02EBAC4D400676574 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B2DAF2EBAC4D400676574 /* CategoryViewModel.swift */; };
+		044B2DB22EBAC4F900676574 /* CategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B2DB12EBAC4F900676574 /* CategoryCoordinator.swift */; };
+		044B2DB42EBAC51300676574 /* CategoryConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B2DB32EBAC51300676574 /* CategoryConstants.swift */; };
+		044B2DB82EBAC55000676574 /* CategoryDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B2DB72EBAC55000676574 /* CategoryDIContainer.swift */; };
 		044D83BF2E8121BF0073CBC9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83BE2E8121BF0073CBC9 /* CustomTextField.swift */; };
 		044D83C12E8124030073CBC9 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83C02E8124030073CBC9 /* PasswordTextField.swift */; };
 		044D83C32E812C050073CBC9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D83C22E812C050073CBC9 /* LoginViewController.swift */; };
@@ -137,6 +145,14 @@
 		0443DA792E91EE53004203CA /* ForgotPasswordModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForgotPasswordModel .swift"; sourceTree = "<group>"; };
 		044B2D9D2EBAA8B200676574 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		044B2D9E2EBAA8B200676574 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		044B2DA72EBAC46B00676574 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		044B2DA92EBAC49D00676574 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		044B2DAA2EBAC49D00676574 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		044B2DAD2EBAC4B900676574 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		044B2DAF2EBAC4D400676574 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		044B2DB12EBAC4F900676574 /* CategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCoordinator.swift; sourceTree = "<group>"; };
+		044B2DB32EBAC51300676574 /* CategoryConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryConstants.swift; sourceTree = "<group>"; };
+		044B2DB72EBAC55000676574 /* CategoryDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDIContainer.swift; sourceTree = "<group>"; };
 		044D83BE2E8121BF0073CBC9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		044D83C02E8124030073CBC9 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		044D83C22E812C050073CBC9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -458,6 +474,74 @@
 			path = Validator;
 			sourceTree = "<group>";
 		};
+		044B2DA12EBAC3C500676574 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				044B2DA52EBAC43D00676574 /* Coordinator */,
+				044B2DA42EBAC43300676574 /* Constants */,
+				044B2DA32EBAC42800676574 /* ViewModel */,
+				044B2DA22EBAC42000676574 /* View */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		044B2DA22EBAC42000676574 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				044B2DA62EBAC44A00676574 /* Cells */,
+				044B2DA72EBAC46B00676574 /* Category.storyboard */,
+				044B2DAD2EBAC4B900676574 /* CategoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		044B2DA32EBAC42800676574 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				044B2DAF2EBAC4D400676574 /* CategoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		044B2DA42EBAC43300676574 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				044B2DB32EBAC51300676574 /* CategoryConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		044B2DA52EBAC43D00676574 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				044B2DB12EBAC4F900676574 /* CategoryCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		044B2DA62EBAC44A00676574 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				044B2DA92EBAC49D00676574 /* CategoryCell.swift */,
+				044B2DAA2EBAC49D00676574 /* CategoryCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		044B2DB52EBAC52800676574 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		044B2DB62EBAC53100676574 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		044D83BC2E8121960073CBC9 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +567,7 @@
 		04727D082E8437B700AD543C /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				044B2DB62EBAC53100676574 /* Category */,
 				043243362E934FF800C38A3B /* Home */,
 				04119F082E9177EF00660FA9 /* ForgotPassword */,
 				043E5B8F2E8E948F00BC9168 /* Login */,
@@ -507,6 +592,7 @@
 				04FD42412E8AF30100453598 /* SignUpDIContainer.swift */,
 				04119F032E91766300660FA9 /* ForgotPasswordDIContainer.swift */,
 				043243342E934FDF00C38A3B /* HomeDIContainer.swift */,
+				044B2DB72EBAC55000676574 /* CategoryDIContainer.swift */,
 			);
 			path = " DI";
 			sourceTree = "<group>";
@@ -669,6 +755,7 @@
 		049564CA2E801E0800BD9352 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				044B2DA12EBAC3C500676574 /* Category */,
 				048EB4F22E95C2D700CAF817 /*  TabBar */,
 				043243292E934F2600C38A3B /* Home */,
 				04119EF72E9174A100660FA9 /* ForgotPassword */,
@@ -710,6 +797,7 @@
 		04A4B8D22E89C18B00E9DACC /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				044B2DB52EBAC52800676574 /* Category */,
 				043243372E93500900C38A3B /* Home */,
 				04119F052E9177D400660FA9 /* ForgotPasswordRepository */,
 				04FD424B2E8AFC8C00453598 /* SignUpRepository */,
@@ -842,10 +930,12 @@
 			files = (
 				0462472C2EB976A70032997F /* BannerImageCell.xib in Resources */,
 				0432432F2E934F6800C38A3B /* Home.storyboard in Resources */,
+				044B2DA82EBAC46B00676574 /* Category.storyboard in Resources */,
 				049564942E7FCA7100BD9352 /* LaunchScreen.storyboard in Resources */,
 				04727D012E84329700AD543C /* GoogleService-Info.plist in Resources */,
 				049564912E7FCA7100BD9352 /* Assets.xcassets in Resources */,
 				049564CF2E801F9700BD9352 /* Login.storyboard in Resources */,
+				044B2DAC2EBAC49D00676574 /* CategoryCell.xib in Resources */,
 				04119EFC2E9175C400660FA9 /* ForgotPassword.storyboard in Resources */,
 				044B2DA02EBAA8B200676574 /* ProductCell.xib in Resources */,
 				046247282EB957450032997F /* BannerCarouselCell.xib in Resources */,
@@ -877,6 +967,7 @@
 				04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */,
 				04119F002E91761A00660FA9 /* ForgotPasswordViewModel.swift in Sources */,
 				04FD424D2E8AFCB300453598 /* SignUpRepository.swift in Sources */,
+				044B2DAB2EBAC49D00676574 /* CategoryCell.swift in Sources */,
 				043E5B8D2E8E912800BC9168 /* UIViewController.swift in Sources */,
 				04FD42482E8AF3C000453598 /* SignupViewModel.swift in Sources */,
 				044B2D9F2EBAA8B200676574 /* ProductCell.swift in Sources */,
@@ -901,12 +992,14 @@
 				044D83BF2E8121BF0073CBC9 /* CustomTextField.swift in Sources */,
 				043243392E93502200C38A3B /* HomeRepository.swift in Sources */,
 				04119F042E91766300660FA9 /* ForgotPasswordDIContainer.swift in Sources */,
+				044B2DB22EBAC4F900676574 /* CategoryCoordinator.swift in Sources */,
 				043BB6F02E9E3A2900360262 /* Product.swift in Sources */,
 				048EB4F42E95C39600CAF817 /* TabBarCoordinator.swift in Sources */,
 				041C10D92E831D9E0069AAB8 /* CustomButton.swift in Sources */,
 				049564BE2E7FFEF600BD9352 /* APIEndpointConfig .swift in Sources */,
 				049564BC2E7FFEDE00BD9352 /* APIRequest.swift in Sources */,
 				048224DB2E825D2300BD801F /* Coordinator.swift in Sources */,
+				044B2DB42EBAC51300676574 /* CategoryConstants.swift in Sources */,
 				04A4B8D42E89C1A200E9DACC /* LoginRepository.swift in Sources */,
 				043243312E934F9B00C38A3B /* HomeViewModel.swift in Sources */,
 				04727D0A2E8437D300AD543C /* LoginUseCaseProtocol.swift in Sources */,
@@ -917,6 +1010,7 @@
 				04119F022E91763B00660FA9 /* ForgotPasswordCoordinator.swift in Sources */,
 				044D83C32E812C050073CBC9 /* LoginViewController.swift in Sources */,
 				045D56562EA6A79E000FC4E6 /* EndPointsURLs.swift in Sources */,
+				044B2DB82EBAC55000676574 /* CategoryDIContainer.swift in Sources */,
 				04FD42512E8AFD1C00453598 /* SignUpUseCaseProtocol.swift in Sources */,
 				04119EF12E901B5900660FA9 /* LoginConstants.swift in Sources */,
 				040EE78E2E999F4200DDFA82 /* SectionHeaderView.swift in Sources */,
@@ -926,9 +1020,11 @@
 				04119EED2E9018D600660FA9 /* SignUpConstants.swift in Sources */,
 				048EB4F62E95E25600CAF817 /* MainTabBarController.swift in Sources */,
 				040EE7822E972F1900DDFA82 /* CustomNavigationBar.swift in Sources */,
+				044B2DB02EBAC4D400676574 /* CategoryViewModel.swift in Sources */,
 				04119EF62E91684700660FA9 /* LoginModel.swift in Sources */,
 				04FD424A2E8AF3E600453598 /* SignUpCoordinator.swift in Sources */,
 				04BA90532E8743D800B095CD /* SignUpValidator.swift in Sources */,
+				044B2DAE2EBAC4B900676574 /* CategoryViewController.swift in Sources */,
 				043BB6F62E9E54EE00360262 /* Banner.swift in Sources */,
 				041C10D02E82F71E0069AAB8 /* UITextField.swift in Sources */,
 				049564C22E7FFF2D00BD9352 /* ResponseHandler.swift in Sources */,
