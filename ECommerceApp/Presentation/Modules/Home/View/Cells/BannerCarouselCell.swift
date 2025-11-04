@@ -33,7 +33,6 @@ private extension BannerCarouselCell {
             layout.minimumLineSpacing = 0
             layout.minimumInteritemSpacing = 0
             layout.sectionInset = .zero
-            layout.scrollDirection = .horizontal
         }
     }
     

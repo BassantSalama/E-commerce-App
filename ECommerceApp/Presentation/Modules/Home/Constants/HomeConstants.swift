@@ -24,35 +24,18 @@ enum HomeConstants {
         static let seeAll = "See All"
     }
     
-    enum HomeLayoutConstants {
-        static let customNavBarHeight: CGFloat = 70
-        static let segmentedControlTopSpacing: CGFloat = 16
-        static let segmentedControlHeight: CGFloat = 40
-        static let collectionViewTopSpacing: CGFloat = 20
-        static let horizontalPadding: CGFloat = 20
-        static let preloadThreshold: CGFloat = 1.5
-    }
-    
     enum ProductCellConstants {
         
         static let identifier = "ProductCell"
         
         enum Images {
-            static let heart = "heart"
             static let placeholder = "PlaceHolderImage"
         }
         
         enum Layout {
             static let cornerRadius: CGFloat = 16
-            static let imageHeight: CGFloat = 200
-            static let stackSpacing: CGFloat = 6
-            static let favoriteButtonSize: CGFloat = 36
             static let favoriteButtonCornerRadius: CGFloat = 18
             static let favoriteButtonOpacity: CGFloat = 0.45
-            static let favoriteButtonPadding: CGFloat = 8
-            static let labelsTopPadding: CGFloat = 10
-            static let labelsHorizontalPadding: CGFloat = 8
-            static let labelsBottomPadding: CGFloat = 8
         }
         
         enum FontSizes {
@@ -68,7 +51,6 @@ enum HomeConstants {
         
         enum Layout {
             static let cornerRadius: CGFloat = 16
-            static let horizontalInset: CGFloat = 6
             static let bannerHeight: CGFloat = 200
         }
     }

@@ -33,7 +33,7 @@ class ProductCell: UICollectionViewCell {
             HomeConstants.ProductCellConstants.Layout.favoriteButtonOpacity
         )
         favoriteButton.layer.cornerRadius = HomeConstants.ProductCellConstants.Layout.favoriteButtonCornerRadius
-        favoriteButton.tintColor = .white
+        
         
         titleLabel.font = .boldSystemFont(ofSize: HomeConstants.ProductCellConstants.FontSizes.title)
         subtitleLabel.font = .systemFont(ofSize: HomeConstants.ProductCellConstants.FontSizes.subtitle)
