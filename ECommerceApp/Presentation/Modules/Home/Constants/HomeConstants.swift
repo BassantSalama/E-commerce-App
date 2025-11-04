@@ -119,9 +119,9 @@ enum HomeConstants {
             static let groupHeight: CGFloat = 300
             
             static let contentTopInset: CGFloat = 8
-            static let contentLeadingInset: CGFloat = 16
+            static let contentLeadingInset: CGFloat = 8
             static let contentBottomInset: CGFloat = 16
-            static let contentTrailingInset: CGFloat = 16
+            static let contentTrailingInset: CGFloat = 8
             
             static let itemTopInset: CGFloat = 8
             static let itemLeadingInset: CGFloat = 8
