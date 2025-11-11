@@ -132,4 +132,9 @@ class HomeViewModel {
         guard !state.isLoading, state.hasNextPage else { return }
         fetchProducts(after: state.paginationCursor)
     }
+    
+    func didTapCategorySegment() {
+        coordinator?.showCategoryScreen()
+    }
+
 }

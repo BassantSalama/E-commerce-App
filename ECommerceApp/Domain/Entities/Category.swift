@@ -1,8 +1,12 @@
 //
-//  Category.swift
+//  CategoryItem.swift
 //  ECommerceApp
 //
-//  Created by mac on 28/10/2025.
+//  Created by mac on 09/11/2025.
 //
 
 import Foundation
+
+struct Category {
+    let imageURL: URL?
+}

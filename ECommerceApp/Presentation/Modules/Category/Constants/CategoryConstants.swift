@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+enum CategoryConstants {
+    
+    enum StoryboardConstants {
+        
+        static let name = "Category"
+        static let viewControllerID = "CategoryViewController"
+    }
+    
+    enum Images {
+        static let placeholder = "PlaceHolderImage"
+    }
+}
+

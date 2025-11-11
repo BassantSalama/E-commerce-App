@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class CategoryDIContainer {
+    
+    static let shared = CategoryDIContainer()
+    private init() {}
+    
+    // MARK: - GetViewModel
+    
+    func getCategoryViewModel(coordinator: CategoryCoordinator) -> CategoryViewModel{
+        return CategoryViewModel(coordinator: coordinator)
+    }
+}

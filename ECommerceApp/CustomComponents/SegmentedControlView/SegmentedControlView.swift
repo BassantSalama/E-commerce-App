@@ -119,22 +119,34 @@ class SegmentedControlView: UIView {
         updateIndicatorConstraints(for: button)
         animateIndicatorMovement()
     }
-
+    
     private func deactivateOldConstraints() {
         indicatorLeadingConstraint.isActive = false
         indicatorWidthConstraint.isActive = false
     }
-
+    
     private func updateIndicatorConstraints(for button: UIButton) {
         indicatorWidthConstraint = indicatorView.widthAnchor.constraint(equalTo: button.widthAnchor, multiplier: 0.7)
         indicatorLeadingConstraint = indicatorView.centerXAnchor.constraint(equalTo: button.centerXAnchor)
         NSLayoutConstraint.activate([indicatorLeadingConstraint, indicatorWidthConstraint])
     }
-
+    
     private func animateIndicatorMovement() {
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
         }
     }
-
+    
+    // MARK: - Selection Control
+    func setSelectedSegment(_ segment: String) {
+        switch segment {
+        case "Home":
+            buttonTapped(homeButton)
+        case "Category":
+            buttonTapped(categoryButton)
+        default:
+            break
+        }
+    }
+    
 }

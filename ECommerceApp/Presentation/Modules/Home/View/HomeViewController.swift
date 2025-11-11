@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
         setupView()
         bindViewModel()
         viewModel.fetchAll()
+        bindSegmentedControl()
     }
 }
 
@@ -203,6 +204,26 @@ private extension HomeViewController {
             }
             .store(in: &cancellables)
     }
+    
+    private func bindSegmentedControl() {
+        segmentedControl.selectionPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] selection in
+                guard let self = self else { return }
+                
+                switch selection {
+                case "Home":
+                    self.segmentedControl.setSelectedSegment("Home")
+                    print("Already in Home Screen")
+                case "Category":
+                    self.viewModel.didTapCategorySegment()
+                default:
+                    break
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
 }
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

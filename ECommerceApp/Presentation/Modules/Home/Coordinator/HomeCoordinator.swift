@@ -43,6 +43,12 @@ class HomeCoordinator : Coordinator {
     
     
     func showCategoryScreen() {
-        print("Navigating to Category Screen")}
-    
+        let categoryCoordinator = CategoryCoordinator(
+            navigationController: navigationController,
+            parentCoordinator: self
+        )
+        childCoordinators.append(categoryCoordinator)
+        categoryCoordinator.start()
+    }
 }
+
