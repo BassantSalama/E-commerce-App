@@ -28,10 +28,10 @@ class CategoryCell: UICollectionViewCell {
         categoryImageView.clipsToBounds = true
     }
     
-    func configure(with urlString: String?) {
-        if let urlString = urlString, let url = URL(string: urlString) {
+    func configure(with category: Category) {
+        if let url = category.imageURL {
             categoryImageView.setImage(from: url)
-        } else {
+        }else {
             categoryImageView.image = UIImage(named: CategoryConstants.Images.placeholder)
         }
     }

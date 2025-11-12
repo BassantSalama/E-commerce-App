@@ -36,6 +36,7 @@ class HomeViewModel {
     private weak var coordinator: HomeCoordinator?
     private let useCase: HomeUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
+    private var segmentedControl: SegmentedControlView!
     
     @Published private(set) var banners: [Banner] = []
     @Published private(set) var products: [Product] = []
@@ -135,6 +136,7 @@ class HomeViewModel {
     
     func didTapCategorySegment() {
         coordinator?.showCategoryScreen()
+       
     }
 
 }

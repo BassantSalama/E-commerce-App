@@ -16,14 +16,16 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var customNavBar: CustomNavigationBar!
     @IBOutlet weak var segmentedControl: SegmentedControlView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
-    
-    private var categoryImages: [String?] = Array(repeating: CategoryConstants.Images.placeholder, count: 4)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupSegmentedControlBinding()
+        bindViewModel()
+        viewModel.fetchCategories()
+      //  segmentedControl.setSelectedSegment("Category")
     }
+
     
     private func setupCollectionView() {
         
@@ -44,19 +46,18 @@ class CategoryViewController: UIViewController {
 
 extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryImages.count
+        return viewModel.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "CategoryCell",
-            for: indexPath
-        ) as! CategoryCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         
-        let imageName = categoryImages[indexPath.item]
-        cell.configure(with: imageName)
+        let category = viewModel.categories[indexPath.item]
+        cell.configure(with: category)
+        
         return cell
     }
+
 }
 extension CategoryViewController {
     private func setupSegmentedControlBinding() {
@@ -68,7 +69,6 @@ extension CategoryViewController {
                 case "Home":
                     self.viewModel.didTapHomeSegment()
                 case "Category":
-                    self.segmentedControl.setSelectedSegment("Category")
                     print("Already in Category")
                 default:
                     break
@@ -76,4 +76,14 @@ extension CategoryViewController {
             }
             .store(in: &cancellables)
     }
+    
+    private func bindViewModel() {
+        viewModel.$categories
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.categoryCollectionView.reloadData()
+            }
+            .store(in: &cancellables)
+    }
+
 }

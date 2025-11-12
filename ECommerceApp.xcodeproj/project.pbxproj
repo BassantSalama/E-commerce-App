@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0407D9702EC2C2730043AE3C /* CategoryEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407D96F2EC2C2730043AE3C /* CategoryEndPoint.swift */; };
+		0407D9722EC2C45C0043AE3C /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407D9712EC2C45C0043AE3C /* CategoryRepository.swift */; };
+		0407D9742EC2C7930043AE3C /* CategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407D9732EC2C7930043AE3C /* CategoryUseCase.swift */; };
+		0407D9762EC2CA350043AE3C /* CategoryUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407D9752EC2CA350043AE3C /* CategoryUseCaseProtocol.swift */; };
 		040EE7822E972F1900DDFA82 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE7812E972F1900DDFA82 /* CustomNavigationBar.swift */; };
 		040EE78C2E999D4600DDFA82 /* HomeLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE78B2E999D4600DDFA82 /* HomeLayoutBuilder.swift */; };
 		040EE78E2E999F4200DDFA82 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EE78D2E999F4200DDFA82 /* SectionHeaderView.swift */; };
@@ -107,6 +111,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0407D96F2EC2C2730043AE3C /* CategoryEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEndPoint.swift; sourceTree = "<group>"; };
+		0407D9712EC2C45C0043AE3C /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
+		0407D9732EC2C7930043AE3C /* CategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUseCase.swift; sourceTree = "<group>"; };
+		0407D9752EC2CA350043AE3C /* CategoryUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUseCaseProtocol.swift; sourceTree = "<group>"; };
 		040EE7812E972F1900DDFA82 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		040EE78B2E999D4600DDFA82 /* HomeLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayoutBuilder.swift; sourceTree = "<group>"; };
 		040EE78D2E999F4200DDFA82 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -338,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				043BB6F32E9E536300360262 /* HomeEndpoint.swift */,
+				0407D96F2EC2C2730043AE3C /* CategoryEndPoint.swift */,
 			);
 			path = HomeEndPoint;
 			sourceTree = "<group>";
@@ -534,6 +543,7 @@
 		044B2DB52EBAC52800676574 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0407D9712EC2C45C0043AE3C /* CategoryRepository.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -541,6 +551,8 @@
 		044B2DB62EBAC53100676574 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0407D9732EC2C7930043AE3C /* CategoryUseCase.swift */,
+				0407D9752EC2CA350043AE3C /* CategoryUseCaseProtocol.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -953,6 +965,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0407D9762EC2CA350043AE3C /* CategoryUseCaseProtocol.swift in Sources */,
 				04FD42532E8B011400453598 /* SignUpViewController.swift in Sources */,
 				04119F072E9177E500660FA9 /* ForgotPasswordRepository.swift in Sources */,
 				043BB6F22E9E533E00360262 /* GraphQLResponse.swift in Sources */,
@@ -962,12 +975,14 @@
 				043E5B912E8E97D600BC9168 /* SignUpModel.swift in Sources */,
 				0432433F2E93508A00C38A3B /* HomeCoordinator.swift in Sources */,
 				041C10CE2E82EF200069AAB8 /* UIViewController+KeyboardHandling.swift in Sources */,
+				0407D9742EC2C7930043AE3C /* CategoryUseCase.swift in Sources */,
 				048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */,
 				04727D0C2E84380C00AD543C /* LoginUseCase.swift in Sources */,
 				045D56582EA764BB000FC4E6 /* ScrollEventModel.swift in Sources */,
 				0443DA752E91C8FF004203CA /* ForgotPasswordConstants.swift in Sources */,
 				049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */,
 				04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */,
+				0407D9722EC2C45C0043AE3C /* CategoryRepository.swift in Sources */,
 				04119F002E91761A00660FA9 /* ForgotPasswordViewModel.swift in Sources */,
 				04FD424D2E8AFCB300453598 /* SignUpRepository.swift in Sources */,
 				044B2DAB2EBAC49D00676574 /* CategoryCell.swift in Sources */,
@@ -1001,6 +1016,7 @@
 				041C10D92E831D9E0069AAB8 /* CustomButton.swift in Sources */,
 				049564BE2E7FFEF600BD9352 /* APIEndpointConfig .swift in Sources */,
 				049564BC2E7FFEDE00BD9352 /* APIRequest.swift in Sources */,
+				0407D9702EC2C2730043AE3C /* CategoryEndPoint.swift in Sources */,
 				048224DB2E825D2300BD801F /* Coordinator.swift in Sources */,
 				044B2DB42EBAC51300676574 /* CategoryConstants.swift in Sources */,
 				04A4B8D42E89C1A200E9DACC /* LoginRepository.swift in Sources */,
