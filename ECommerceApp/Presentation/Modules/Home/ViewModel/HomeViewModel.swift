@@ -10,33 +10,18 @@ import Combine
 
 class HomeViewModel {
     
-    // MARK: - State Struct
+    // MARK: - Loading State
     struct LoadingState {
         var isLoading: Bool = false
         var isLoadingMore: Bool = false
         var hasNextPage: Bool = true
         var paginationCursor: String? = nil
-        
-        mutating func startInitialLoad() {
-            isLoading = true
-            isLoadingMore = false
-        }
-        
-        mutating func startPagination() {
-            isLoadingMore = true
-        }
-        
-        mutating func finishLoading() {
-            isLoading = false
-            isLoadingMore = false
-        }
     }
     
     // MARK: - Properties
     private weak var coordinator: HomeCoordinator?
     private let useCase: HomeUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
-    private var segmentedControl: SegmentedControlView!
     
     @Published private(set) var banners: [Banner] = []
     @Published private(set) var products: [Product] = []
@@ -59,47 +44,28 @@ class HomeViewModel {
     
     // MARK: - Network Requests
     func fetchBanners() {
-        state.startInitialLoad()
-        isLoading = true
+        startLoading()
         
         useCase.getBanners(first: HomeConstants.ViewModelConstants.bannersPageSize)
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                guard let self = self else { return }
-                self.state.finishLoading()
-                self.isLoading = false
-                
-                if case .failure(let error) = completion {
-                    self.error = error
-                }
-            } receiveValue: { [weak self] banners in
+            .sink(receiveCompletion: { [weak self] completion in
+                self?.finishLoading(completion: completion)
+            }, receiveValue: { [weak self] banners in
                 self?.banners = banners
-            }
+            })
             .store(in: &cancellables)
     }
     
     func fetchProducts(after cursor: String? = nil) {
         guard !state.isLoadingMore else { return }
         
-        if cursor == nil {
-            state.startInitialLoad()
-        } else {
-            state.startPagination()
-        }
-        
-        isLoading = true
+        if cursor == nil { startLoading() } else { startPagination() }
         
         useCase.getProducts(first: HomeConstants.ViewModelConstants.productsPageSize, after: cursor)
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                guard let self = self else { return }
-                self.state.finishLoading()
-                self.isLoading = false
-                
-                if case .failure(let error) = completion {
-                    self.error = error
-                }
-            } receiveValue: { [weak self] response in
+            .sink(receiveCompletion: { [weak self] completion in
+                self?.finishLoading(completion: completion)
+            }, receiveValue: { [weak self] response in
                 guard let self = self else { return }
                 self.state.hasNextPage = response.pageInfo.hasNextPage
                 self.state.paginationCursor = response.pageInfo.endCursor
@@ -109,11 +75,11 @@ class HomeViewModel {
                 } else {
                     self.products.append(contentsOf: response.products)
                 }
-            }
+            })
             .store(in: &cancellables)
     }
     
-    // MARK: - Pagination Handling
+    // MARK: - Pagination
     func handleScrollEvent(_ scrollModel: ScrollEventModel) {
         guard scrollModel.contentHeight > scrollModel.viewHeight,
               state.hasNextPage,
@@ -134,5 +100,24 @@ class HomeViewModel {
         fetchProducts(after: state.paginationCursor)
     }
     
-
+    private func startLoading() {
+        state.isLoading = true
+        state.isLoadingMore = false
+        isLoading = true
+    }
+    
+    private func startPagination() {
+        state.isLoadingMore = true
+        isLoading = true
+    }
+    
+    private func finishLoading(completion: Subscribers.Completion<APIError>) {
+        state.isLoading = false
+        state.isLoadingMore = false
+        isLoading = false
+        
+        if case .failure(let error) = completion {
+            self.error = error
+        }
+    }
 }

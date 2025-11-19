@@ -83,14 +83,6 @@ private extension HomeViewController {
     }
 }
 
-// MARK: - Actions
-private extension HomeViewController {
-    
-    @objc func didTapSearch() {
-        print("Search icon tapped")
-    }
-}
-
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource , UICollectionViewDelegate{
     
