@@ -97,8 +97,8 @@ enum HomeConstants {
         
         enum ProductSection {
             static let itemWidth: CGFloat = 0.5
-            static let itemHeight: CGFloat = 250
-            static let groupHeight: CGFloat = 300
+            static let itemHeight: CGFloat = 300
+            static let groupHeight: CGFloat = 350
             
             static let contentTopInset: CGFloat = 8
             static let contentLeadingInset: CGFloat = 8

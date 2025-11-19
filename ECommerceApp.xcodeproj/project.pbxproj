@@ -38,6 +38,9 @@
 		0432433D2E93505500C38A3B /* HomeUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432433C2E93505500C38A3B /* HomeUseCaseProtocol.swift */; };
 		0432433F2E93508A00C38A3B /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432433E2E93508A00C38A3B /* HomeCoordinator.swift */; };
 		043243412E9350A300C38A3B /* HomeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043243402E9350A300C38A3B /* HomeConstants.swift */; };
+		043994492EC6E1260093162B /* HomeMainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043994482EC6E1260093162B /* HomeMainContainerViewController.swift */; };
+		0439944B2EC6E1390093162B /* HomeMainContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0439944A2EC6E1390093162B /* HomeMainContainer.storyboard */; };
+		043994512EC6F2B00093162B /* HomeMainContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043994502EC6F2B00093162B /* HomeMainContainerCoordinator.swift */; };
 		043BB6F02E9E3A2900360262 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BB6EF2E9E3A2900360262 /* Product.swift */; };
 		043BB6F22E9E533E00360262 /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BB6F12E9E533E00360262 /* GraphQLResponse.swift */; };
 		043BB6F42E9E536300360262 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BB6F32E9E536300360262 /* HomeEndpoint.swift */; };
@@ -98,6 +101,7 @@
 		049564C92E8006E200BD9352 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049564C82E8006E200BD9352 /* AppColors.swift */; };
 		049564CF2E801F9700BD9352 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049564CE2E801F9700BD9352 /* Login.storyboard */; };
 		04A4B8D42E89C1A200E9DACC /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4B8D32E89C1A200E9DACC /* LoginRepository.swift */; };
+		04B032262ECB65A500B0FF27 /* HomeMainContainerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B032252ECB65A500B0FF27 /* HomeMainContainerConstants.swift */; };
 		04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C10D22E8317140069AAB8 /* LoginCoordinator.swift */; };
 		04BA90532E8743D800B095CD /* SignUpValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA90522E8743D800B095CD /* SignUpValidator.swift */; };
 		04FD42422E8AF30100453598 /* SignUpDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD42412E8AF30100453598 /* SignUpDIContainer.swift */; };
@@ -143,6 +147,9 @@
 		0432433C2E93505500C38A3B /* HomeUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseProtocol.swift; sourceTree = "<group>"; };
 		0432433E2E93508A00C38A3B /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		043243402E9350A300C38A3B /* HomeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConstants.swift; sourceTree = "<group>"; };
+		043994482EC6E1260093162B /* HomeMainContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainContainerViewController.swift; sourceTree = "<group>"; };
+		0439944A2EC6E1390093162B /* HomeMainContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeMainContainer.storyboard; sourceTree = "<group>"; };
+		043994502EC6F2B00093162B /* HomeMainContainerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainContainerCoordinator.swift; sourceTree = "<group>"; };
 		043BB6EF2E9E3A2900360262 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		043BB6F12E9E533E00360262 /* GraphQLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLResponse.swift; sourceTree = "<group>"; };
 		043BB6F32E9E536300360262 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
@@ -199,6 +206,7 @@
 		049564C82E8006E200BD9352 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		049564CE2E801F9700BD9352 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		04A4B8D32E89C1A200E9DACC /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		04B032252ECB65A500B0FF27 /* HomeMainContainerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainContainerConstants.swift; sourceTree = "<group>"; };
 		04BA90522E8743D800B095CD /* SignUpValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidator.swift; sourceTree = "<group>"; };
 		04FD42412E8AF30100453598 /* SignUpDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDIContainer.swift; sourceTree = "<group>"; };
 		04FD42432E8AF34600453598 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -428,6 +436,33 @@
 				043243382E93502200C38A3B /* HomeRepository.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		043994472EC6E1020093162B /* MainContainer */ = {
+			isa = PBXGroup;
+			children = (
+				04B032242ECB657300B0FF27 /* Constants */,
+				0439944D2EC6F1140093162B /* Coordinator */,
+				0439944C2EC6E1450093162B /* View */,
+			);
+			path = MainContainer;
+			sourceTree = "<group>";
+		};
+		0439944C2EC6E1450093162B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				043994482EC6E1260093162B /* HomeMainContainerViewController.swift */,
+				0439944A2EC6E1390093162B /* HomeMainContainer.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0439944D2EC6F1140093162B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				043994502EC6F2B00093162B /* HomeMainContainerCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		043A0ED42E8848C300348CA7 /* Entities */ = {
@@ -770,6 +805,7 @@
 		049564CA2E801E0800BD9352 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				043994472EC6E1020093162B /* MainContainer */,
 				044B2DA12EBAC3C500676574 /* Category */,
 				048EB4F22E95C2D700CAF817 /*  TabBar */,
 				043243292E934F2600C38A3B /* Home */,
@@ -827,6 +863,14 @@
 				04A4B8D32E89C1A200E9DACC /* LoginRepository.swift */,
 			);
 			path = LoginRepository;
+			sourceTree = "<group>";
+		};
+		04B032242ECB657300B0FF27 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				04B032252ECB65A500B0FF27 /* HomeMainContainerConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		04FD423D2E8AF1F800453598 /* SignUp */ = {
@@ -955,6 +999,7 @@
 				044B2DA02EBAA8B200676574 /* ProductCell.xib in Resources */,
 				046247282EB957450032997F /* BannerCarouselCell.xib in Resources */,
 				04FD42462E8AF38900453598 /* SignUp.storyboard in Resources */,
+				0439944B2EC6E1390093162B /* HomeMainContainer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,12 +1023,14 @@
 				0407D9742EC2C7930043AE3C /* CategoryUseCase.swift in Sources */,
 				048224DD2E825D4F00BD801F /* AppFlowCoordinator.swift in Sources */,
 				04727D0C2E84380C00AD543C /* LoginUseCase.swift in Sources */,
+				043994492EC6E1260093162B /* HomeMainContainerViewController.swift in Sources */,
 				045D56582EA764BB000FC4E6 /* ScrollEventModel.swift in Sources */,
 				0443DA752E91C8FF004203CA /* ForgotPasswordConstants.swift in Sources */,
 				049564882E7FCA6F00BD9352 /* AppDelegate.swift in Sources */,
 				04BA90502E873B1C00B095CD /* LoginCoordinator.swift in Sources */,
 				0407D9722EC2C45C0043AE3C /* CategoryRepository.swift in Sources */,
 				04119F002E91761A00660FA9 /* ForgotPasswordViewModel.swift in Sources */,
+				04B032262ECB65A500B0FF27 /* HomeMainContainerConstants.swift in Sources */,
 				04FD424D2E8AFCB300453598 /* SignUpRepository.swift in Sources */,
 				044B2DAB2EBAC49D00676574 /* CategoryCell.swift in Sources */,
 				043E5B8D2E8E912800BC9168 /* UIViewController.swift in Sources */,
@@ -1018,6 +1065,7 @@
 				049564BC2E7FFEDE00BD9352 /* APIRequest.swift in Sources */,
 				0407D9702EC2C2730043AE3C /* CategoryEndPoint.swift in Sources */,
 				048224DB2E825D2300BD801F /* Coordinator.swift in Sources */,
+				043994512EC6F2B00093162B /* HomeMainContainerCoordinator.swift in Sources */,
 				044B2DB42EBAC51300676574 /* CategoryConstants.swift in Sources */,
 				04A4B8D42E89C1A200E9DACC /* LoginRepository.swift in Sources */,
 				043243312E934F9B00C38A3B /* HomeViewModel.swift in Sources */,

@@ -16,22 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-wj-KLu" customClass="CustomNavigationBar" customModule="ECommerceApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="59" width="393" height="70"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="8dJ-5m-yLb"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m88-Wq-e57" customClass="SegmentedControlView" customModule="ECommerceApp" customModuleProvider="target">
-                                <rect key="frame" x="16" y="137" width="361" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="QEA-XG-Hvw"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3iM-df-93k">
-                                <rect key="frame" x="0.0" y="209" width="393" height="601"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ONU-N8-ACf">
                                     <size key="itemSize" width="128" height="128"/>
@@ -45,22 +31,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="A8E-wj-KLu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="3Jh-9i-bDf"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3iM-df-93k" secondAttribute="trailing" id="3p7-gR-kKT"/>
-                            <constraint firstItem="3iM-df-93k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="82u-Lf-Vdg"/>
-                            <constraint firstItem="m88-Wq-e57" firstAttribute="top" secondItem="A8E-wj-KLu" secondAttribute="bottom" constant="8" id="Itk-tb-V79"/>
-                            <constraint firstItem="A8E-wj-KLu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="TWB-Cm-Pr9"/>
-                            <constraint firstItem="3iM-df-93k" firstAttribute="top" secondItem="m88-Wq-e57" secondAttribute="bottom" constant="32" id="Tt5-yc-ynn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="m88-Wq-e57" secondAttribute="trailing" constant="16" id="Ven-3K-j72"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3iM-df-93k" secondAttribute="bottom" constant="8" id="f4f-IQ-Ykk"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="A8E-wj-KLu" secondAttribute="trailing" id="kf5-9b-yD7"/>
-                            <constraint firstItem="m88-Wq-e57" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="t6i-HJ-Dd6"/>
+                            <constraint firstItem="3iM-df-93k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1fA-D6-Gfl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3iM-df-93k" secondAttribute="bottom" id="OKq-MF-elL"/>
+                            <constraint firstItem="3iM-df-93k" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="e2Y-mK-8Ej"/>
+                            <constraint firstItem="3iM-df-93k" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="sYa-TE-Tf6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="categoryCollectionView" destination="3iM-df-93k" id="jOg-KK-HnH"/>
-                        <outlet property="customNavBar" destination="A8E-wj-KLu" id="hIi-vG-6em"/>
-                        <outlet property="segmentedControl" destination="m88-Wq-e57" id="g3Q-7b-bWt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,11 @@ enum CategoryConstants {
         static let viewControllerID = "CategoryViewController"
     }
     
+    enum Cells {
+        static let categoryCellNibName = "CategoryCell"
+        static let categoryCellReuseID = "CategoryCell"
+    }
+    
     enum Images {
         static let placeholder = "PlaceHolderImage"
     }

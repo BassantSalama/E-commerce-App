@@ -42,10 +42,5 @@ class CategoryViewModel: ObservableObject {
             .store(in: &cancellables)
         
     }
-    
-    
-    func didTapHomeSegment() {
-        coordinator?.showHomeScreen()
-    }
-    
+
 }

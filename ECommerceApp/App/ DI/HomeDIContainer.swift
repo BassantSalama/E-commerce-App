@@ -27,4 +27,5 @@ class HomeDIContainer {
         let useCase = getHomeUseCase()
         return HomeViewModel(coordinator: coordinator, useCase: useCase)
     }
+    
 }

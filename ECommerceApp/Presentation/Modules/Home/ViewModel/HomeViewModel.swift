@@ -134,9 +134,5 @@ class HomeViewModel {
         fetchProducts(after: state.paginationCursor)
     }
     
-    func didTapCategorySegment() {
-        coordinator?.showCategoryScreen()
-       
-    }
 
 }

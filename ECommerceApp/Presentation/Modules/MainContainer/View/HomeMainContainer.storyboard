@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Main Container View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HomeMainContainer" id="Y6W-OH-hqX" customClass="HomeMainContainerViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWV-Pp-goc" customClass="CustomNavigationBar" customModule="ECommerceApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="393" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="0ea-Eu-jpg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUk-Y8-iFS" customClass="SegmentedControlView" customModule="ECommerceApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="137" width="361" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NuA-N7-EMX"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYX-Aq-NMF" userLabel="containerView">
+                                <rect key="frame" x="0.0" y="197" width="393" height="621"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AYX-Aq-NMF" firstAttribute="top" secondItem="zUk-Y8-iFS" secondAttribute="bottom" constant="20" id="3qk-GW-diI"/>
+                            <constraint firstItem="BWV-Pp-goc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7es-kF-mCY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="AYX-Aq-NMF" secondAttribute="bottom" id="FhV-ux-upQ"/>
+                            <constraint firstItem="BWV-Pp-goc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="G9M-aJ-4tm"/>
+                            <constraint firstItem="zUk-Y8-iFS" firstAttribute="top" secondItem="BWV-Pp-goc" secondAttribute="bottom" constant="8" id="GvW-fk-Hcy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zUk-Y8-iFS" secondAttribute="trailing" constant="16" id="PFh-nn-ceZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BWV-Pp-goc" secondAttribute="trailing" id="cHJ-sh-UFQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AYX-Aq-NMF" secondAttribute="trailing" id="ujr-MV-zMx"/>
+                            <constraint firstItem="zUk-Y8-iFS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="vtg-yj-wOc"/>
+                            <constraint firstItem="AYX-Aq-NMF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wR3-Il-pmF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="AYX-Aq-NMF" id="x7t-OQ-4ZG"/>
+                        <outlet property="customNavBar" destination="BWV-Pp-goc" id="Peu-od-RgL"/>
+                        <outlet property="segmentedControl" destination="zUk-Y8-iFS" id="eVd-c2-7Ij"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.343511450381679" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

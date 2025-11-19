@@ -32,28 +32,31 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
                     </button>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yAU-4C-Dct">
-                        <rect key="frame" x="8" y="210" width="34" height="73"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yAU-4C-Dct">
+                        <rect key="frame" x="8" y="210" width="34" height="72"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzc-I5-rgd" userLabel="titleLabel">
-                                <rect key="frame" x="0.0" y="0.0" width="34" height="20.333333333333332"/>
+                                <rect key="frame" x="0.0" y="0.0" width="34" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xU-1j-tVn" userLabel="subtitleLabel">
-                                <rect key="frame" x="0.0" y="26.333333333333343" width="34" height="20.333333333333329"/>
+                                <rect key="frame" x="0.0" y="26" width="34" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NJ-lq-KQe" userLabel="priceLabel">
-                                <rect key="frame" x="0.0" y="52.666666666666686" width="34" height="20.333333333333329"/>
+                                <rect key="frame" x="0.0" y="52" width="34" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="72" id="6cJ-yp-MoU"/>
+                        </constraints>
                     </stackView>
                 </subviews>
             </view>
@@ -63,7 +66,6 @@
                 <constraint firstItem="Tj4-h2-0HO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LK7-z4-nrZ"/>
                 <constraint firstItem="yAU-4C-Dct" firstAttribute="top" secondItem="Tj4-h2-0HO" secondAttribute="bottom" constant="10" id="Ndd-Ad-39d"/>
                 <constraint firstItem="Tj4-h2-0HO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wfc-nY-aj4"/>
-                <constraint firstAttribute="bottom" secondItem="yAU-4C-Dct" secondAttribute="bottom" constant="8" id="XHV-YY-7bs"/>
                 <constraint firstAttribute="trailing" secondItem="Tj4-h2-0HO" secondAttribute="trailing" id="kci-TN-GpH"/>
                 <constraint firstItem="3nr-M4-X0O" firstAttribute="top" secondItem="Tj4-h2-0HO" secondAttribute="top" constant="10" id="mA2-a6-GBJ"/>
                 <constraint firstItem="Tj4-h2-0HO" firstAttribute="trailing" secondItem="3nr-M4-X0O" secondAttribute="trailing" constant="8" id="nRU-sL-E5v"/>

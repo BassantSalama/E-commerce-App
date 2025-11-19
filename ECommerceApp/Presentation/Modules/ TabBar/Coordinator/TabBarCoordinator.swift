@@ -41,7 +41,7 @@ final class TabBarCoordinator: Coordinator {
     
     private func createHomeFlow() -> UINavigationController {
         let homeNavigationController = UINavigationController()
-        let homeCoordinator = HomeCoordinator(navigationController: homeNavigationController,parentCoordinator: self)
+        let homeCoordinator = HomeMainContainerCoordinator(navigationController: homeNavigationController,parentCoordinator: self)
         homeCoordinator.start()
         
         homeNavigationController.tabBarItem = UITabBarItem(

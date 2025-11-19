@@ -14,7 +14,6 @@ class BannerCarouselCell: UICollectionViewCell {
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    
     private var banners: [Banner] = []
     
     override func awakeFromNib() {
