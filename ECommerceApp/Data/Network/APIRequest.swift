@@ -8,30 +8,24 @@
 import Foundation
 
 enum HTTPMethod: String {
-    case GET, POST, PUT, DELETE
-}
-
-enum ParameterEncoding {
-    case url
-    case json
+    case POST
 }
 
 struct APIRequest {
     let url: URL
-    let method: HTTPMethod
     let headers: [String: String]?
-    let parameters: [String: Any]?
-    let parameterEncoding: ParameterEncoding
+    let query: String
+    let variables: [String: Any]?
     
-    init(url: URL,
-         method: HTTPMethod = .GET,
-         headers: [String: String]? = nil,
-         parameters: [String: Any]? = nil,
-         parameterEncoding: ParameterEncoding = .url) {
+    init(
+        url: URL,
+        headers: [String: String]? = nil,
+        query: String,
+        variables: [String: Any]? = nil
+    ) {
         self.url = url
-        self.method = method
         self.headers = headers
-        self.parameters = parameters
-        self.parameterEncoding = parameterEncoding
+        self.query = query
+        self.variables = variables
     }
 }
