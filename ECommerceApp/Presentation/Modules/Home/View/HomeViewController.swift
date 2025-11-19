@@ -179,18 +179,12 @@ private extension HomeViewController {
     private func bindViewModel() {
         viewModel.$banners
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                guard let self = self else { return }
-                self.homeCollectionView.reloadSections([SectionType.banners.rawValue])
-            }
+            .sink { [weak self] _ in self?.homeCollectionView.reloadSections([SectionType.banners.rawValue]) }
             .store(in: &cancellables)
         
         viewModel.$products
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                guard let self = self else { return }
-                self.homeCollectionView.reloadSections([SectionType.products.rawValue])
-            }
+            .sink { [weak self] _ in self?.homeCollectionView.reloadSections([SectionType.products.rawValue]) }
             .store(in: &cancellables)
     }
 }
