@@ -153,12 +153,13 @@ private extension HomeViewController {
     
     
     func headerView(for indexPath: IndexPath, in collectionView: UICollectionView) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(
+        guard let header = collectionView.dequeueReusableSupplementaryView(
             ofKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: SectionHeaderView.identifier,
             for: indexPath
-        ) as! SectionHeaderView
-        
+        ) as? SectionHeaderView else {
+            return UICollectionReusableView()
+        }
         configureHeader(header, forSection: indexPath.section)
         return header
     }
