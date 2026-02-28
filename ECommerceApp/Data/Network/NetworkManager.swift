@@ -7,21 +7,25 @@
 
 import Foundation
 
-// MARK: - Network Service Protocol
 protocol NetworkService {
     func request<T: Decodable>(_ request: APIRequest,completion: @escaping (Result<T, APIError>) -> Void)
     func loadImage(from url: URL,completion: @escaping (Result<Data, APIError>) -> Void)
     func clearImageCache()
 }
 
+// MARK: - NetworkManager
 final class NetworkManager: NetworkService {
     
     static let shared = NetworkManager()
-    private let imageCache = NSCache<NSString, NSData>()
     private init() {}
     
-    // MARK: - Generic Request
-    func request<T: Decodable>(_ request: APIRequest,completion: @escaping (Result<T, APIError>) -> Void) {
+     let imageCache = NSCache<NSURL, NSData>()
+    
+    // Generic request
+    func request<T: Decodable>(
+        _ request: APIRequest,
+        completion: @escaping (Result<T, APIError>) -> Void
+    ) {
         do {
             let urlRequest = try buildURLRequest(from: request)
             URLSession.shared.dataTask(with: urlRequest) { data, response, error in
@@ -32,53 +36,44 @@ final class NetworkManager: NetworkService {
         }
     }
     
-    // MARK: - Image Loading with Cache
-    func loadImage(from url: URL,completion: @escaping (Result<Data, APIError>) -> Void) {
-        if let cached = imageCache.object(forKey: url.absoluteString as NSString) {
-            completion(.success(cached as Data))
+    private func buildURLRequest(from request: APIRequest) throws -> URLRequest {
+        var urlRequest = URLRequest(url: request.url)
+        urlRequest.httpMethod = "POST"
+        request.headers?.forEach { key, value in
+            urlRequest.setValue(value, forHTTPHeaderField: key)
+        }
+        let body: [String: Any] = [
+            "query": request.query,
+            "variables": request.variables ?? [:]
+        ]
+        urlRequest.httpBody = try JSONSerialization.data(withJSONObject: body)
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return urlRequest
+    }
+    
+    // Load Image with cache
+    func loadImage(from url: URL, completion: @escaping (Result<Data, APIError>) -> Void) {
+        if let cachedData = imageCache.object(forKey: url as NSURL) {
+            completion(.success(cachedData as Data))
             return
         }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            ResponseHandler.handle(data: data, response: response, error: error) { (result: Result<Data, APIError>) in
-                if case .success(let data) = result {
-                    self.imageCache.setObject(data as NSData, forKey: url.absoluteString as NSString)
-                }
-                completion(result)
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            if let error = error {
+                completion(.failure(.networkError(error)))
+                return
             }
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            self?.imageCache.setObject(data as NSData, forKey: url as NSURL)
+            completion(.success(data))
         }.resume()
     }
     
     func clearImageCache() {
         imageCache.removeAllObjects()
-    }
-    
-    // MARK: - Private Helpers
-    private func buildURLRequest(from request: APIRequest) throws -> URLRequest {
-        var urlRequest = URLRequest(url: request.url)
-        urlRequest.httpMethod = request.method.rawValue
-        
-        request.headers?.forEach { key, value in
-            urlRequest.setValue(value, forHTTPHeaderField: key)
-        }
-        
-        if let params = request.parameters {
-            switch request.parameterEncoding {
-            case .url:
-                var components = URLComponents(string: request.url.absoluteString)
-                components?.queryItems = params.map { key, value in
-                    URLQueryItem(name: key, value: String(describing: value))
-                }
-                if let newURL = components?.url {
-                    urlRequest.url = newURL
-                }
-
-            case .json:
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
-                urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            }
-        }
-        
-        return urlRequest
+        print("Image cache cleared.")
     }
 }

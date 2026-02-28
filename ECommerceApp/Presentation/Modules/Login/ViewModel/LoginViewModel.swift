@@ -68,5 +68,10 @@ class LoginViewModel {
     func didTapForgotPassword(){
         coordinator?.navigateToForgotPassword()
     }
+    
+    func didLoginSuccess() {
+        coordinator?.loginSuccessPublisher.send(())
+    }
+    
 }
 

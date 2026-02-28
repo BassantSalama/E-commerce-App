@@ -63,7 +63,7 @@ private extension LoginViewController {
         viewModel.loginSuccess
             .receive(on: DispatchQueue.main)
             .sink {
-                print("Login Success")
+                self.viewModel.didLoginSuccess()
             }
             .store(in: &cancellables)
     }

@@ -9,16 +9,21 @@ import UIKit
 
 extension UIImageView {
     func setImage(from url: URL, network: NetworkService = NetworkManager.shared) {
-        // set default placeholder first
+        if let cachedData = (network as? NetworkManager)?
+            .imageCache.object(forKey: url as NSURL),
+           let cachedImage = UIImage(data: cachedData as Data) {
+            self.image = cachedImage
+            return
+        }
+        
         self.image = UIImage(named: "PlaceHolderImage")
-
+        
         network.loadImage(from: url) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
                     self?.image = UIImage(data: data)
                 case .failure:
-                    // fallback to placeholder if failed
                     self?.image = UIImage(named: "PlaceHolderImage")
                 }
             }
